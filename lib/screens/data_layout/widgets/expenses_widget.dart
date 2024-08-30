@@ -1,6 +1,6 @@
 import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/core/components/custom_text.dart';
-import 'package:money_tracker/screens/data_layout/model.dart';
+import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/utils/images.dart';
 import 'package:flutter/material.dart';

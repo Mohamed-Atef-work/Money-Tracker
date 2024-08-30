@@ -9,7 +9,6 @@ class HomePanelScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final english = Get.find<English>();
     return Scaffold(
       backgroundColor: Colors.grey,
       body: Column(

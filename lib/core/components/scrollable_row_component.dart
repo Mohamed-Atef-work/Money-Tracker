@@ -1,43 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/custom_text.dart';
+import 'package:money_tracker/core/utils/constants/constants.dart';
 
 class ScrollableRowItemComponent extends StatelessWidget {
   final void Function() onTap;
-  final Color backgroundColor;
-  final Color iconAndTextColor;
+  final bool isChosen;
   final String title;
 
   const ScrollableRowItemComponent({
     super.key,
     required this.onTap,
     required this.title,
-    required this.backgroundColor,
-    required this.iconAndTextColor,
+    required this.isChosen,
   });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(20),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CustomText(
-              text: title,
-              fontSize: 18,
-              textColor: iconAndTextColor,
-              textAlign: TextAlign.center,
-            ),
-          ],
+    return Padding(
+      padding: kHorizontalPadding5,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(20),
+        child: Container(
+          padding: kHorizontal10Vertical5,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: isChosen ? Colors.black : Colors.green,
+          ),
+          child: CustomText(
+            text: title,
+            fontSize: 18,
+            textAlign: TextAlign.center,
+            textColor: isChosen ? Colors.green : Colors.black,
+          ),
         ),
       ),
     );
