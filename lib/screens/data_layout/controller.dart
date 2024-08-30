@@ -9,7 +9,7 @@ class DataLayoutController extends GetxController {
   List<String> titles = [
     English.months,
     English.persons,
-    English.spendingSide,
+    English.spendingSides,
   ];
 
   currentIndex(int current) {

@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:money_tracker/core/components/custom_text.dart';
-import 'package:money_tracker/core/config/styles.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
+import 'package:money_tracker/core/components/custom_text.dart';
+import 'package:money_tracker/screens/data_layout/model.dart';
 import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/utils/images.dart';
-import 'package:money_tracker/screens/data_layout/model.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ExpensesWidget extends StatelessWidget {
   final ExpanseModel model;
@@ -19,7 +18,7 @@ class ExpensesWidget extends StatelessWidget {
       child: Row(
         children: [
           Padding(
-            padding: kSymmetricPadding5,
+            padding: kHorizontalPadding5,
             child: SvgPicture.asset(
               Images.expanse,
               width: width * 0.15,
@@ -38,8 +37,8 @@ class ExpensesWidget extends StatelessWidget {
               ),
               SizedBox(height: height * 0.01),
               CustomText(
-                text: model.person,
                 fontSize: 15,
+                text: model.person,
                 textColor: kDarkBrown,
               ),
               SizedBox(height: height * 0.005),

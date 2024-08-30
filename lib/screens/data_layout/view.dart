@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/app_bar.dart';
 import 'package:money_tracker/core/components/bottom_navigation_bar.dart';
 import 'package:money_tracker/screens/data_layout/controller.dart';
