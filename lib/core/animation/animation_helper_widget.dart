@@ -19,13 +19,15 @@ class AnimationHelperWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
+      decoration: _decoration(),
       height: height,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(20),
-      ),
+      width: width,
       child: child,
     );
   }
+
+  _decoration() => BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(20),
+      );
 }
