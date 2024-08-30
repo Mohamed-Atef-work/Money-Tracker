@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:money_tracker/core/components/custom_text.dart';
 import 'package:money_tracker/core/config/styles.dart';
-import 'package:money_tracker/core/utils/constants/colors.dart';
+import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/utils/images.dart';
 import 'package:money_tracker/screens/data_layout/model.dart';

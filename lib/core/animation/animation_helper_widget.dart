@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constants/colors.dart';
+import '../utils/constants/constants.dart';
 
 class AnimationHelperWidget extends StatelessWidget {
   final double width;

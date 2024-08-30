@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 class AppBottomNav extends StatelessWidget {
   final int index;
   final void Function(int)? onTap;
-  const AppBottomNav({super.key, required this.index, this.onTap});
+  const AppBottomNav({
+    super.key,
+    this.onTap,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,36 +1,23 @@
-import 'package:money_tracker/core/utils/local/local_constants.dart';
-import 'package:money_tracker/core/utils/local/local_interface.dart';
 
-class English implements AppLocal {
-  @override
-  String data = "Data";
+class English {
+  static String code = "en";
+  static String data = "Data";
+  static String months = "Months";
+  static String persons = "Persons";
+  static String expanses = "expanses";
+  static String statistics = "Statistics";
+  static String appName = "Money Tracker";
+  static String spendingSide = "Spending Side";
+  static String addNewExpanse = "Add New Expanse";
 
-  @override
-  String months = "Months";
-
-  @override
-  String persons = "Persons";
-
-  @override
-  String revenues = "Revenues";
-
-  @override
-  String statistics = "Statistics";
-
-  @override
-  String appName = "Money Tracker";
-
-  @override
-  String addNewRevenue = "Add New Revenue";
-
-  @override
-  Map<String, String> toMap() => {
+  static Map<String, String> toMap() => {
         data: data,
         months: months,
         appName: appName,
         persons: persons,
-        revenues: revenues,
+        expanses: expanses,
         statistics: statistics,
-        addNewRevenue: addNewRevenue,
+        spendingSide: spendingSide,
+        addNewExpanse: addNewExpanse,
       };
 }

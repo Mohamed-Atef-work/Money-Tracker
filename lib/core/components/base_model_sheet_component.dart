@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_tracker/core/utils/constants/colors.dart';
+import 'package:money_tracker/core/utils/constants/constants.dart';
 
 class BaseModelSheetComponent extends StatelessWidget {
   final Widget child;

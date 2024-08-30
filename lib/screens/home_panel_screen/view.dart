@@ -17,19 +17,19 @@ class HomePanelScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CustomButton(
-            text: english.addNewRevenue.tr,
+            text: English.addNewExpanse.tr,
             onPressed: () {
               Get.toNamed(Screens.addNewRevenue);
             },
           ),
           CustomButton(
-            text: english.data.tr,
+            text: English.data.tr,
             onPressed: () {
               Get.toNamed(Screens.dataLayout);
             },
           ),
           CustomButton(
-            text: english.statistics.tr,
+            text: English.statistics.tr,
             onPressed: () {
               Get.toNamed(Screens.statisticsLayout);
             },
