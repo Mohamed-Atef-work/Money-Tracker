@@ -3,9 +3,13 @@ import 'package:money_tracker/screens/data_layout/view.dart';
 import 'package:money_tracker/core/utils/screens_strings.dart';
 import 'package:money_tracker/screens/home_panel_screen/view.dart';
 import 'package:money_tracker/screens/statistics_layout/view.dart';
+import 'package:money_tracker/test_screen.dart';
 
 List<GetPage<dynamic>>? pages() => [
       GetPage(
+        name: Screens.test,
+        page: () => const TestScreen(),
+      ),GetPage(
         name: Screens.homePanel,
         page: () => const HomePanelScreen(),
       ),

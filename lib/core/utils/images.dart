@@ -4,4 +4,5 @@ class Images {
   static String loading = "assets/images/loading.svg";
   static String logoIcon = "assets/images/cart.svg";
   static String user = "assets/images/user.svg";
+  static String expanse = "assets/images/expanse.svg";
 }
