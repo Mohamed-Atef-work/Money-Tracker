@@ -25,13 +25,13 @@ class AppBottomNav extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           label: '',
-          activeIcon: Icon(Icons.calendar_month, color: Colors.white),
-          icon: Icon(Icons.calendar_month, color: Colors.black),
+          activeIcon: Icon(Icons.monetization_on, color: Colors.white),
+          icon: Icon(Icons.monetization_on, color: Colors.black),
         ),
         BottomNavigationBarItem(
           label: '',
-          activeIcon: Icon(Icons.monetization_on, color: Colors.white),
-          icon: Icon(Icons.monetization_on, color: Colors.black),
+          activeIcon: Icon(Icons.calendar_month, color: Colors.white),
+          icon: Icon(Icons.calendar_month, color: Colors.black),
         ),
       ],
     );

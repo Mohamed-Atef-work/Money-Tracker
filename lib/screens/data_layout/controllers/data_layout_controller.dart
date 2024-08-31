@@ -10,8 +10,8 @@ class DataLayoutController extends GetxController {
   }
 
   List<String> titles = [
-    English.months,
     English.persons,
     English.spendingSides,
+    English.months,
   ];
 }

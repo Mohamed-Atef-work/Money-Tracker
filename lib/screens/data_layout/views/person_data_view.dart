@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_tracker/screens/data_layout/widgets/persons_data_widget.dart';
 
 class PersonsDataView extends StatelessWidget {
   const PersonsDataView({super.key});
@@ -8,6 +9,8 @@ class PersonsDataView extends StatelessWidget {
     return const Column(
       children: [
         Text("PersonsDataView"),
+        PersonsDataWidget(),
+
       ],
     );
   }

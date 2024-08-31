@@ -29,11 +29,11 @@ class DataLayoutScreen extends StatelessWidget {
 
   Widget _body(int index) {
     if (index == 0) {
-      return const MonthsDataView();
-    } else if (index == 1) {
       return const PersonsDataView();
-    } else {
+    } else if (index == 1) {
       return const SpendingSidesDataView();
+    } else {
+      return const MonthsDataView();
     }
   }
 }

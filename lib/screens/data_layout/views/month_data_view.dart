@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:money_tracker/screens/data_layout/widgets/months_widget.dart';
+import 'package:money_tracker/screens/data_layout/widgets/months_data_widget.dart';
 
 class MonthsDataView extends StatelessWidget {
   const MonthsDataView({super.key});
@@ -11,7 +11,7 @@ class MonthsDataView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text("data"),
-        MonthsWidget(),
+        MonthsDataWidget(),
       ],
     );
   }

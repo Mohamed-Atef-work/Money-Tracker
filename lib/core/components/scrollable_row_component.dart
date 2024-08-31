@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/context_extensions.dart';
 import 'package:money_tracker/core/components/custom_text.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 
@@ -33,6 +34,36 @@ class ScrollableRowItemComponent extends StatelessWidget {
             textAlign: TextAlign.center,
             textColor: isChosen ? Colors.green : Colors.black,
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ScrollableRowComponent extends StatelessWidget {
+  final int comingIndex;
+  final List<String> titles;
+  final void Function(int index) onTap;
+
+  const ScrollableRowComponent({
+    super.key,
+    required this.onTap,
+    required this.titles,
+    required this.comingIndex,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: context.height * 0.05,
+      child: ListView.builder(
+        itemCount: titles.length,
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemBuilder: (_, index) => ScrollableRowItemComponent(
+          title: titles[index],
+          onTap: () => onTap(index),
+          isChosen: comingIndex == index ? true : false,
         ),
       ),
     );
