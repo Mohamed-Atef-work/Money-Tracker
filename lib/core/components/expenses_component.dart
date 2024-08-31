@@ -1,14 +1,15 @@
+import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/core/components/custom_text.dart';
-import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/utils/images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ExpensesWidget extends StatelessWidget {
+class ExpenseComponent extends StatelessWidget {
   final ExpanseModel model;
-  const ExpensesWidget({super.key, required this.model});
+
+  const ExpenseComponent(this.model, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +59,22 @@ class ExpensesWidget extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ExpansesListViewWidget extends StatelessWidget {
+  final List expanses;
+  const ExpansesListViewWidget({super.key, required this.expanses});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.separated(
+        itemBuilder: (_, index) => ExpenseComponent(expanses[index]),
+        separatorBuilder: (_, __) => const SizedBox(height: 5),
+        itemCount: expanses.length,
       ),
     );
   }

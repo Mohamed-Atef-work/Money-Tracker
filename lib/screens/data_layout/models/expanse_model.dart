@@ -1,7 +1,7 @@
 class ExpanseModel {
   final double money;
-  final String person;
   final String month;
+  final String person;
   final String description;
   final String spendingSide;
 
