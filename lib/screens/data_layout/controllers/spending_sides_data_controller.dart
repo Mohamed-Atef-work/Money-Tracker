@@ -1,13 +1,19 @@
 import 'package:get/get.dart';
+import 'package:money_tracker/core/utils/local/english.dart';
 
 class SpendingSidesDataController extends GetxController {
-  int currentSpendingSideIndex = 0;
+  int selectedMonth = 0;
+  int selectedSide = 0;
 
-  void spendingSideIndex(int index) {
-    currentSpendingSideIndex = index;
+  void selectMonth(int selected) {
+    selectedMonth = selected;
     update();
   }
 
+  void selectSide(int index) {
+    selectedSide = index;
+    update();
+  }
   List<String> spendingSides = [
     "shopping",
     "shopping",

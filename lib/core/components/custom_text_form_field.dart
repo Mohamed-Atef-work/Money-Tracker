@@ -27,7 +27,7 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.suffixPressed,
     this.hintTextColor,
-    this.fontSize = 15,
+    this.fontSize = 18,
     this.obSecure = false,
     required this.hintText,
     this.textEditingController,

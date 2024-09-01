@@ -2,6 +2,7 @@ import 'package:money_tracker/core/utils/local/english.dart';
 
 class Arabic {
   static String code = "ar";
+  static String search = "ابحث";
   static String data = "بيانات";
   static String months = "شهور";
   static String money = "المال";
@@ -12,7 +13,7 @@ class Arabic {
   static String statistics = "احصائيات";
   static String appName = "متتبع المال";
   static String spendingSides = "أوجه الانفاق";
-  static String addNewExpanse = "اضافة مصروف";
+  static String addExpanse = "اضافة مصروف";
 
   static String may = "مايو";
   static String june = "يونيو";
@@ -41,6 +42,7 @@ class Arabic {
         English.february: february,
         English.september: september,
         English.data: data,
+        English.search: search,
         English.money: money,
         English.person: person,
         English.months: months,
@@ -50,6 +52,6 @@ class Arabic {
         English.statistics: statistics,
         English.description: description,
         English.spendingSides: spendingSides,
-        English.addNewExpanse: addNewExpanse,
+        English.addExpanse: addExpanse,
       };
 }

@@ -16,7 +16,7 @@ class HomePanelScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CustomButton(
-            text: English.addNewExpanse.tr,
+            text: English.addExpanse.tr,
             onPressed: () => Get.toNamed(Screens.addExpanse),
           ),
           CustomButton(

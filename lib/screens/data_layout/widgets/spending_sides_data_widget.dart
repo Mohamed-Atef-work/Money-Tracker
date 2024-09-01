@@ -13,8 +13,8 @@ class SpendingSIdesDataWidget extends StatelessWidget {
       builder: (_) {
         return ScrollableRowComponent(
           titles: controller.spendingSides,
-          comingIndex: controller.currentSpendingSideIndex,
-          onTap: (chosenIndex) => controller.spendingSideIndex(chosenIndex),
+          comingIndex: controller.selectedSide,
+          onTap: (chosenIndex) => controller.selectSide(chosenIndex),
         );
       },
     );

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/scrollable_row_component.dart';
+import 'package:money_tracker/core/utils/local/english.dart';
 import 'package:money_tracker/screens/data_layout/controllers/months_data_view_controller.dart';
 
 class MonthsDataWidget extends StatelessWidget {
@@ -12,9 +13,9 @@ class MonthsDataWidget extends StatelessWidget {
     return GetBuilder<MonthsDataController>(
       builder: (_) {
         return ScrollableRowComponent(
-          titles: controller.titles,
-          comingIndex: controller.currentMonthIndex,
-          onTap: (chosenIndex) => controller.monthIndex(chosenIndex),
+          titles: English.monthsList,
+          comingIndex: controller.selectedMonth,
+          onTap: (chosenIndex) => controller.selectMonth(chosenIndex),
         );
       },
     );

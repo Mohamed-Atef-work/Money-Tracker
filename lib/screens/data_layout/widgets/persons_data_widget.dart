@@ -14,8 +14,8 @@ class PersonsDataWidget extends StatelessWidget {
       builder: (_) {
         return ScrollableRowComponent(
           titles: controller.persons,
-          comingIndex: controller.currentPersonIndex,
-          onTap: (chosenIndex) => controller.personIndex(chosenIndex),
+          comingIndex: controller.selectedPerson,
+          onTap: (chosenIndex) => controller.selectPerson(chosenIndex),
         );
       },
     );

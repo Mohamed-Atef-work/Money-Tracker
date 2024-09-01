@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 class English {
   static String code = "en";
 
@@ -14,6 +16,7 @@ class English {
   static String february = "February";
   static String september = "September";
 
+  static String search = "search";
   static String data = "Data";
   static String months = "Months";
   static String money = "Money";
@@ -25,7 +28,22 @@ class English {
   static String description = "Description";
 
   static String spendingSides = "Spending Sides";
-  static String addNewExpanse = "Add New Expanse";
+  static String addExpanse = "Add Expanse";
+
+  static List<String> monthsList = [
+    English.january.tr,
+    English.february.tr,
+    English.mars.tr,
+    English.april.tr,
+    English.may.tr,
+    English.june.tr,
+    English.july.tr,
+    English.august.tr,
+    English.september.tr,
+    English.october.tr,
+    English.november.tr,
+    English.december.tr
+  ];
 
   static Map<String, String> toMap() => {
         may: may,
@@ -41,6 +59,7 @@ class English {
         february: february,
         september: september,
         data: data,
+        search: search,
         money: money,
         person: person,
         months: months,
@@ -50,6 +69,6 @@ class English {
         statistics: statistics,
         description: description,
         spendingSides: spendingSides,
-        addNewExpanse: addNewExpanse,
+        addExpanse: addExpanse,
       };
 }
