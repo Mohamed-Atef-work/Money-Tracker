@@ -4,8 +4,11 @@ class Arabic {
   static String code = "ar";
   static String data = "بيانات";
   static String months = "شهور";
+  static String money = "المال";
+  static String person = "الشخص";
   static String persons = "اشخاص";
   static String expanses = "مصروفات";
+  static String description = "الوصف";
   static String statistics = "احصائيات";
   static String appName = "متتبع المال";
   static String spendingSides = "أوجه الانفاق";
@@ -38,11 +41,14 @@ class Arabic {
         English.february: february,
         English.september: september,
         English.data: data,
+        English.money: money,
+        English.person: person,
         English.months: months,
         English.appName: appName,
         English.persons: persons,
         English.expanses: expanses,
         English.statistics: statistics,
+        English.description: description,
         English.spendingSides: spendingSides,
         English.addNewExpanse: addNewExpanse,
       };

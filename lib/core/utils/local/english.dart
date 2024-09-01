@@ -16,10 +16,14 @@ class English {
 
   static String data = "Data";
   static String months = "Months";
+  static String money = "Money";
+  static String person = "Person";
   static String persons = "Persons";
   static String expanses = "expanses";
   static String statistics = "Statistics";
   static String appName = "Money Tracker";
+  static String description = "Description";
+
   static String spendingSides = "Spending Sides";
   static String addNewExpanse = "Add New Expanse";
 
@@ -37,11 +41,14 @@ class English {
         february: february,
         september: september,
         data: data,
+        money: money,
+        person: person,
         months: months,
         appName: appName,
         persons: persons,
         expanses: expanses,
         statistics: statistics,
+        description: description,
         spendingSides: spendingSides,
         addNewExpanse: addNewExpanse,
       };

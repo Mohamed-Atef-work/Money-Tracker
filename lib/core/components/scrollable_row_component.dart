@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/src/extensions/context_extensions.dart';
 import 'package:money_tracker/core/components/custom_text.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
+import 'package:get/get_utils/src/extensions/context_extensions.dart';
 
 class ScrollableRowItemComponent extends StatelessWidget {
   final void Function() onTap;
@@ -22,12 +22,13 @@ class ScrollableRowItemComponent extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(20),
-        child: Container(
+        child: AnimatedContainer(
           padding: kHorizontal10Vertical5,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: isChosen ? Colors.black : Colors.green,
           ),
+          duration: kDuration1Second,
           child: CustomText(
             text: title,
             fontSize: 18,

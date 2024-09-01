@@ -17,21 +17,15 @@ class HomePanelScreen extends StatelessWidget {
         children: [
           CustomButton(
             text: English.addNewExpanse.tr,
-            onPressed: () {
-              Get.toNamed(Screens.addNewRevenue);
-            },
+            onPressed: () => Get.toNamed(Screens.addExpanse),
           ),
           CustomButton(
             text: English.data.tr,
-            onPressed: () {
-              Get.toNamed(Screens.dataLayout);
-            },
+            onPressed: () => Get.toNamed(Screens.dataLayout),
           ),
           CustomButton(
             text: English.statistics.tr,
-            onPressed: () {
-              Get.toNamed(Screens.statisticsLayout);
-            },
+            onPressed: () => Get.toNamed(Screens.statisticsLayout),
           ),
         ],
       ),

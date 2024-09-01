@@ -11,9 +11,10 @@ class AppBindings extends Bindings {
         fenix: true);
     Get.lazyPut<MonthsDataController>(() => MonthsDataController(),
         fenix: true);
-      Get.lazyPut<PersonsDataController>(() => PersonsDataController(),
+    Get.lazyPut<PersonsDataController>(() => PersonsDataController(),
         fenix: true);
-      Get.lazyPut<SpendingSidesDataController>(() => SpendingSidesDataController(),
+    Get.lazyPut<SpendingSidesDataController>(
+        () => SpendingSidesDataController(),
         fenix: true);
   }
 }

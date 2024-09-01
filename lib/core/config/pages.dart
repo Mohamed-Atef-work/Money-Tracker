@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:money_tracker/screens/data_layout/views/add_expanse_screen.dart';
 import 'package:money_tracker/screens/data_layout/views/layout_screen.dart';
 import 'package:money_tracker/core/utils/screens_strings.dart';
 import 'package:money_tracker/screens/home_panel_screen/view.dart';
@@ -9,7 +10,8 @@ List<GetPage<dynamic>>? pages() => [
       GetPage(
         name: Screens.test,
         page: () => const TestScreen(),
-      ),GetPage(
+      ),
+      GetPage(
         name: Screens.homePanel,
         page: () => const HomePanelScreen(),
       ),
@@ -20,5 +22,9 @@ List<GetPage<dynamic>>? pages() => [
       GetPage(
         name: Screens.statisticsLayout,
         page: () => const StatisticsLayoutScreen(),
+      ),
+      GetPage(
+        name: Screens.addExpanse,
+        page: () => const AddExpanseScreen(),
       ),
     ];
