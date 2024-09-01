@@ -16,19 +16,18 @@ class English {
   static String february = "February";
   static String september = "September";
 
-  static String search = "search";
   static String data = "Data";
-  static String months = "Months";
   static String money = "Money";
+  static String search = "search";
+  static String months = "Months";
   static String person = "Person";
   static String persons = "Persons";
   static String expanses = "expanses";
   static String statistics = "Statistics";
   static String appName = "Money Tracker";
-  static String description = "Description";
-
-  static String spendingSides = "Spending Sides";
   static String addExpanse = "Add Expanse";
+  static String description = "Description";
+  static String spendingSides = "Spending Sides";
 
   static List<String> monthsList = [
     English.january.tr,
@@ -59,16 +58,16 @@ class English {
         february: february,
         september: september,
         data: data,
-        search: search,
         money: money,
+        search: search,
         person: person,
         months: months,
         appName: appName,
         persons: persons,
         expanses: expanses,
+        addExpanse: addExpanse,
         statistics: statistics,
         description: description,
         spendingSides: spendingSides,
-        addExpanse: addExpanse,
       };
 }

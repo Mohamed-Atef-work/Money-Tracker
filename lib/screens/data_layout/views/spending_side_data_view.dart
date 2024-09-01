@@ -4,7 +4,7 @@ import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
 import 'package:money_tracker/core/utils/local/english.dart';
 import 'package:money_tracker/screens/data_layout/controllers/spending_sides_data_controller.dart';
-import 'package:money_tracker/screens/data_layout/widgets/spending_sides_data_widget.dart';
+import 'package:money_tracker/screens/data_layout/widgets/not_needed/spending_sides_data_widget.dart';
 
 class SpendingSidesDataView extends StatelessWidget {
   const SpendingSidesDataView({super.key});
