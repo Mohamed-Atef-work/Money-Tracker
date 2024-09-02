@@ -59,6 +59,30 @@ class SqfliteServices {
     return response;
   }
 
+  Future<List<Map<String, dynamic>>> getItems(String tableName) async {
+    final db = await getDB;
+    final response = await db!.query(tableName);
+    return response;
+  }
+
+  Future<int> updateItem({
+    required int id,
+    required String tableName,
+    required Map<String, dynamic> data,
+  }) async {
+    final db = await getDB;
+    final response =
+        await db!.update(tableName, data, where: '$kId = ?', whereArgs: [id]);
+    return response;
+  }
+
+  Future<int> deleteItem({required int id, required String tableName}) async {
+    final db = await getDB;
+    final response =
+        await db!.delete(tableName, where: '$kId = ?', whereArgs: [id]);
+    return response;
+  }
+
   String _createWhereQuery(List columnsNames) {
     String whereQuery = "";
     for (String ele in columnsNames) {

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:money_tracker/core/error/failure.dart';
-import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/screens/data_layout/models/person_model.dart';
+import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
 
 abstract class DataRepo {
