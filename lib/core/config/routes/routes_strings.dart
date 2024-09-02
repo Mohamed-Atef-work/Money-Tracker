@@ -1,4 +1,4 @@
-class Screens {
+class Routes {
   static const String homePanel = "/";
   static const String test = "/test";
   static const String dataLayout = "/dataLayout";

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
+import 'package:money_tracker/core/utils/local/english.dart';
 import 'package:money_tracker/screens/data_layout/controllers/add_expanse_controller.dart';
 
 class MenusWidget extends StatelessWidget {
@@ -23,7 +24,7 @@ class MenusWidget extends StatelessWidget {
             onChanged: (int? selected) => controller.selectSide(selected!),
           ),
           DropDownMenuComponent(
-            items: controller.months,
+            items: English.monthsList,
             selectedValue: controller.selectedMonth,
             onChanged: (int? selected) => controller.selectMonth(selected!),
           ),

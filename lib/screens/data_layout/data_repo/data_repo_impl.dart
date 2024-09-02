@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:money_tracker/core/error/failure.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
@@ -9,9 +10,7 @@ import 'package:money_tracker/core/utils/services/sqflite/sqflite_services.dart'
 import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
 
 class DataRepoImpl implements DataRepo {
-  final SqfliteServices _sqflite;
-
-  DataRepoImpl(this._sqflite);
+  final SqfliteServices _sqflite = Get.find<SqfliteServices>();
 
   @override
   Future<List<PersonModel>> getPersons() async {

@@ -66,15 +66,15 @@ class ExpenseComponent extends StatelessWidget {
 
 class ExpansesListViewWidget extends StatelessWidget {
   final List expanses;
-  const ExpansesListViewWidget({super.key, required this.expanses});
+  const ExpansesListViewWidget(this.expanses, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.separated(
-        itemBuilder: (_, index) => ExpenseComponent(expanses[index]),
-        separatorBuilder: (_, __) => const SizedBox(height: 5),
         itemCount: expanses.length,
+        separatorBuilder: (_, __) => const SizedBox(height: 5),
+        itemBuilder: (_, index) => ExpenseComponent(expanses[index]),
       ),
     );
   }

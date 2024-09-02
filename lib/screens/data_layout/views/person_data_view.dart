@@ -32,7 +32,7 @@ class PersonsDataView extends StatelessWidget {
             ],
           ),
         ),
-        ExpansesListViewWidget(expanses: expanses),
+        ExpansesListViewWidget( expanses),
       ],
     );
   }
