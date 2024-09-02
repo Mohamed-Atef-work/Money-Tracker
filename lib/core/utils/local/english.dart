@@ -29,6 +29,14 @@ class English {
   static String description = "Description";
   static String spendingSides = "Spending Sides";
 
+  static String databaseIsClosed = "Database is closed.";
+  static String tableDoesNotExist = "Table does not exist.";
+  static String unknownDatabaseError = "Unknown database error:";
+  static String syntaxErrorInSQLQuery = "Syntax error in SQL query.";
+  static String failedToOpenTheDatabase = "Failed to open the database.";
+  static String uniqueConstraintViolation = "Unique constraint violation.";
+  static String databaseIsInReadOnlyMode = "Database is in read-only mode.";
+
   static List<String> monthsList = [
     English.january.tr,
     English.february.tr,
@@ -69,5 +77,12 @@ class English {
         statistics: statistics,
         description: description,
         spendingSides: spendingSides,
+        databaseIsClosed: databaseIsClosed,
+        tableDoesNotExist: tableDoesNotExist,
+        unknownDatabaseError: unknownDatabaseError,
+        syntaxErrorInSQLQuery: syntaxErrorInSQLQuery,
+        failedToOpenTheDatabase: failedToOpenTheDatabase,
+        databaseIsInReadOnlyMode: databaseIsInReadOnlyMode,
+        uniqueConstraintViolation: uniqueConstraintViolation,
       };
 }

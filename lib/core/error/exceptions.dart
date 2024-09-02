@@ -1,13 +1,10 @@
-import 'package:money_tracker/core/utils/services/sqflite/db_constants.dart';
+import 'package:money_tracker/core/utils/local/english.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ServerException implements Exception {
   final String message;
   final Object? object;
-  const ServerException({
-    required this.message,
-    this.object,
-  });
+  const ServerException({required this.message, this.object});
 }
 
 class LocalDataBaseException implements Exception {
@@ -15,20 +12,21 @@ class LocalDataBaseException implements Exception {
   const LocalDataBaseException(this.message);
 
   factory LocalDataBaseException.fromSqflite(DatabaseException e) {
-    if (e.isNoSuchTableError()) {
-      return const LocalDataBaseException(kTableDoesNotExist);
+    if (e.isDatabaseClosedError()) {
+      return LocalDataBaseException(English.databaseIsClosed);
+    } else if (e.isNoSuchTableError()) {
+      return LocalDataBaseException(English.tableDoesNotExist);
     } else if (e.isSyntaxError()) {
-      return const LocalDataBaseException(kSyntaxErrorInSQLQuery);
+      return LocalDataBaseException(English.syntaxErrorInSQLQuery);
     } else if (e.isOpenFailedError()) {
-      return const LocalDataBaseException(kFailedToOpenTheDatabase);
-    } else if (e.isDatabaseClosedError()) {
-      return const LocalDataBaseException(kDatabaseIsClosed);
+      return LocalDataBaseException(English.failedToOpenTheDatabase);
     } else if (e.isReadOnlyError()) {
-      return const LocalDataBaseException(kDatabaseIsInReadOnlyMode);
+      return LocalDataBaseException(English.databaseIsInReadOnlyMode);
     } else if (e.isUniqueConstraintError()) {
-      return const LocalDataBaseException(kUniqueConstraintViolation);
+      return LocalDataBaseException(English.uniqueConstraintViolation);
     } else {
-      return LocalDataBaseException('$kUnknownDatabaseError ${e.toString()}');
+      return LocalDataBaseException(
+          English.unknownDatabaseError + e.toString());
     }
   }
 }

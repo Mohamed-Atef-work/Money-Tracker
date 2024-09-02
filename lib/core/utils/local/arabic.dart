@@ -28,6 +28,14 @@ class Arabic {
   static String february = "فبراير";
   static String september = "سبتمبر";
 
+  static String databaseIsClosed = "Database is closed.";
+  static String tableDoesNotExist = "Table does not exist.";
+  static String unknownDatabaseError = "Unknown database error:";
+  static String syntaxErrorInSQLQuery = "Syntax error in SQL query.";
+  static String failedToOpenTheDatabase = "Failed to open the database.";
+  static String uniqueConstraintViolation = "Unique constraint violation.";
+  static String databaseIsInReadOnlyMode = "Database is in read-only mode.";
+
   static Map<String, String> toMap() => {
         English.may: may,
         English.june: june,
@@ -50,8 +58,15 @@ class Arabic {
         English.persons: persons,
         English.expanses: expanses,
         English.statistics: statistics,
+        English.addExpanse: addExpanse,
         English.description: description,
         English.spendingSides: spendingSides,
-        English.addExpanse: addExpanse,
+        English.databaseIsClosed: databaseIsClosed,
+        English.tableDoesNotExist: tableDoesNotExist,
+        English.unknownDatabaseError: unknownDatabaseError,
+        English.syntaxErrorInSQLQuery: syntaxErrorInSQLQuery,
+        English.failedToOpenTheDatabase: failedToOpenTheDatabase,
+        English.databaseIsInReadOnlyMode: databaseIsInReadOnlyMode,
+        English.uniqueConstraintViolation: uniqueConstraintViolation,
       };
 }
