@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
-import 'package:money_tracker/core/utils/services/sqflite/sqflit_services.dart';
+import 'package:money_tracker/core/utils/services/sqflite/sqflite_services.dart';
 import 'package:money_tracker/money_tracker_app.dart';
 import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 

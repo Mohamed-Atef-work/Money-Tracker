@@ -1,3 +1,6 @@
+import 'package:money_tracker/core/utils/services/sqflite/db_constants.dart';
+import 'package:sqflite/sqflite.dart';
+
 abstract class Failure {
   final String message;
   final dynamic object;
@@ -16,7 +19,6 @@ class ServerFailure extends Failure {
 }
 
 class LocalDataBaseFailure extends Failure {
-  const LocalDataBaseFailure({
-    required super.message,
-  });
+  const LocalDataBaseFailure({required super.message});
+
 }

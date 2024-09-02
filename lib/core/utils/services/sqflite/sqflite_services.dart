@@ -34,14 +34,12 @@ class SqfliteServices {
     required String tableName,
     required Map<String, dynamic> data,
   }) async {
-    print("insertinggggggggggggggg");
     final db = await getDB;
     final response = await db!.insert(
       tableName,
       data,
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
-    print(response);
     return response;
   }
 
