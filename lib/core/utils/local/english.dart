@@ -22,7 +22,8 @@ class English {
   static String months = "Months";
   static String person = "Person";
   static String persons = "Persons";
-  static String expanses = "expanses";
+  static String loading = "Loading";
+  static String expanses = "Expanses";
   static String statistics = "Statistics";
   static String appName = "Money Tracker";
   static String addExpanse = "Add Expanse";
@@ -70,6 +71,7 @@ class English {
         search: search,
         person: person,
         months: months,
+        loading: loading,
         appName: appName,
         persons: persons,
         expanses: expanses,

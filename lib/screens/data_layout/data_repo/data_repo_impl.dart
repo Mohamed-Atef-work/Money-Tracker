@@ -10,7 +10,9 @@ import 'package:money_tracker/core/utils/services/sqflite/sqflite_services.dart'
 import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
 
 class DataRepoImpl implements DataRepo {
-  final SqfliteServices _sqflite = Get.find<SqfliteServices>();
+  final SqfliteServices _sqflite;
+
+  DataRepoImpl(this._sqflite);
 
   @override
   Future<List<PersonModel>> getPersons() async {

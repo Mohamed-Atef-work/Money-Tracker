@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/scrollable_row_component.dart';
 import 'package:money_tracker/screens/data_layout/controllers/spending_sides_data_controller.dart';
 
-class SpendingSIdesDataWidget extends StatelessWidget {
+/*class SpendingSIdesDataWidget extends StatelessWidget {
   const SpendingSIdesDataWidget({super.key});
 
   @override
@@ -19,4 +19,4 @@ class SpendingSIdesDataWidget extends StatelessWidget {
       },
     );
   }
-}
+}*/

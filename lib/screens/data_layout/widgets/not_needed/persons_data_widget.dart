@@ -4,7 +4,7 @@ import 'package:money_tracker/core/components/scrollable_row_component.dart';
 import 'package:money_tracker/screens/data_layout/controllers/months_data_view_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/persons_data_controller.dart';
 
-class PersonsDataWidget extends StatelessWidget {
+/*class PersonsDataWidget extends StatelessWidget {
   const PersonsDataWidget({super.key});
 
   @override
@@ -20,4 +20,4 @@ class PersonsDataWidget extends StatelessWidget {
       },
     );
   }
-}
+}*/

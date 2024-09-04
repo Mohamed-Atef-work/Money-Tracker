@@ -10,10 +10,11 @@ class Arabic {
   static String persons = "اشخاص";
   static String expanses = "مصروفات";
   static String description = "الوصف";
+  static String loading = "جار التحمبل";
   static String statistics = "احصائيات";
   static String appName = "متتبع المال";
-  static String spendingSides = "أوجه الانفاق";
   static String addExpanse = "اضافة مصروف";
+  static String spendingSides = "أوجه الانفاق";
 
   static String may = "مايو";
   static String june = "يونيو";
@@ -50,10 +51,11 @@ class Arabic {
         English.february: february,
         English.september: september,
         English.data: data,
-        English.search: search,
         English.money: money,
+        English.search: search,
         English.person: person,
         English.months: months,
+        English.loading: loading,
         English.appName: appName,
         English.persons: persons,
         English.expanses: expanses,

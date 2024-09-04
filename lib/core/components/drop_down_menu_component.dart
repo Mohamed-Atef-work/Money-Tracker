@@ -3,9 +3,9 @@ import 'package:get/get_utils/get_utils.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 
 class DropDownMenuComponent extends StatelessWidget {
-  final int selectedValue;
   final List<String> items;
-  final void Function(int? value) onChanged;
+  final String selectedValue;
+  final void Function(String? value) onChanged;
   const DropDownMenuComponent({
     super.key,
     required this.items,
@@ -17,14 +17,14 @@ class DropDownMenuComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     final menuItems = List.generate(
       items.length,
-      (index) => DropdownMenuItem(value: index, child: Text(items[index].tr)),
+      (index) => DropdownMenuItem(value: items[index], child: Text(items[index].tr)),
     );
     return Container(
       decoration: BoxDecoration(
         color: kDarkBrown,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: DropdownButton<int>(
+      child: DropdownButton<String>(
         items: menuItems,
         value: selectedValue,
         onChanged: onChanged,

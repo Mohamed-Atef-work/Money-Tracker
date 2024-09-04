@@ -5,34 +5,36 @@ import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/expenses_component.dart';
 import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
-import 'package:money_tracker/screens/data_layout/controllers/persons_data_controller.dart';
+import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
 
 class PersonsDataView extends StatelessWidget {
   const PersonsDataView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final personsSidesData = Get.find<PersonsSidesDataController>();
     return Column(
       children: [
-        GetBuilder<PersonsDataController>(
+        GetBuilder<PersonsSidesDataController>(
           builder: (controller) => Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               DropDownMenuComponent(
                 items: English.monthsList,
                 selectedValue: controller.selectedMonth,
-                onChanged: (int? selected) => controller.selectMonth(selected!),
+                onChanged: (String? selected) =>
+                    controller.selectMonth(selected!),
               ),
               DropDownMenuComponent(
-                items: controller.persons,
+                items: personsSidesData.persons,
                 selectedValue: controller.selectedPerson,
-                onChanged: (int? selected) => controller.selectedPerson,
+                onChanged: (String? selected) => controller.selectedPerson,
               ),
               CustomButton(text: English.search.tr),
             ],
           ),
         ),
-        ExpansesListViewWidget( expanses),
+        ExpansesListViewWidget(expanses),
       ],
     );
   }
