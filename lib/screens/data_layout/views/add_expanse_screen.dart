@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:money_tracker/core/utils/images.dart';
 import 'package:money_tracker/core/components/app_bar.dart';
-import 'package:money_tracker/core/utils/local/english.dart';
+import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/custom_text_form_field.dart';
 import 'package:money_tracker/screens/data_layout/widgets/add_expense_menus_widget.dart';

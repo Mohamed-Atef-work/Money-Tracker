@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
-import 'package:money_tracker/core/utils/local/english.dart';
+import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/screens/data_layout/controllers/add_expanse_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
 

@@ -1,4 +1,4 @@
-import 'package:money_tracker/core/utils/local/english.dart';
+import 'package:money_tracker/core/config/local/english.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ServerException implements Exception {

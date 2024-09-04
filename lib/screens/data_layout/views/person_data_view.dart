@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:money_tracker/core/utils/local/english.dart';
+import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/expenses_component.dart';
 import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';

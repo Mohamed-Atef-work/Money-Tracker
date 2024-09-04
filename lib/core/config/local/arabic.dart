@@ -1,4 +1,4 @@
-import 'package:money_tracker/core/utils/local/english.dart';
+import 'package:money_tracker/core/config/local/english.dart';
 
 class Arabic {
   static String code = "ar";

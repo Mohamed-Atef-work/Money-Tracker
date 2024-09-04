@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
-import 'package:money_tracker/core/utils/local/english.dart';
+import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/screens/data_layout/data_repo/data_repo.dart';
 import 'package:money_tracker/screens/data_layout/models/person_model.dart';
 import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
