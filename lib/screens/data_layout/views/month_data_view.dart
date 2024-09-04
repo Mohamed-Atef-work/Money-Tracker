@@ -23,16 +23,15 @@ class MonthsDataView extends StatelessWidget {
           children: [
             GetBuilder<PersonsSidesDataController>(
               builder: (controller) => DropDownMenuComponent(
-                items: English.monthsList,
+                items: controller.translatedMonths,
                 selectedValue: controller.selectedMonth,
-                onChanged: (String? selected) =>
-                    controller.selectMonth(selected!),
+                onChanged: (int? selected) => controller.selectMonth(selected!),
               ),
             ),
             CustomButton(
               text: English.search.tr,
-              onPressed: () => monthController
-                  .getExpanses(personSideController.selectedMonth),
+              onPressed: () => monthController.getExpanses(
+                  English.monthsList[personSideController.selectedMonth]),
             ),
           ],
         ),

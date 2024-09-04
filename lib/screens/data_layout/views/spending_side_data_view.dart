@@ -18,16 +18,14 @@ class SpendingSidesDataView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               DropDownMenuComponent(
-                items: English.monthsList,
+                items: controller.translatedMonths,
                 selectedValue: controller.selectedMonth,
-                onChanged: (String? selected) =>
-                    controller.selectMonth(selected!),
+                onChanged: (int? selected) => controller.selectMonth(selected!),
               ),
               DropDownMenuComponent(
                 items: controller.sides,
-                selectedValue: controller.selectedSide ?? "default",
-                onChanged: (String? selected) =>
-                    controller.selectSide(selected!),
+                selectedValue: controller.selectedSide,
+                onChanged: (int? selected) => controller.selectSide(selected!),
               ),
               CustomButton(text: English.search.tr),
             ],

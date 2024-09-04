@@ -12,7 +12,6 @@ class PersonsDataView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final personsSidesData = Get.find<PersonsSidesDataController>();
     return Column(
       children: [
         GetBuilder<PersonsSidesDataController>(
@@ -20,15 +19,15 @@ class PersonsDataView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               DropDownMenuComponent(
-                items: English.monthsList,
+                items: controller.translatedMonths,
                 selectedValue: controller.selectedMonth,
-                onChanged: (String? selected) =>
+                onChanged: (int? selected) =>
                     controller.selectMonth(selected!),
               ),
               DropDownMenuComponent(
-                items: personsSidesData.persons,
+                items: controller.persons,
                 selectedValue: controller.selectedPerson,
-                onChanged: (String? selected) => controller.selectedPerson,
+                onChanged: (int? selected) => controller.selectedPerson,
               ),
               CustomButton(text: English.search.tr),
             ],

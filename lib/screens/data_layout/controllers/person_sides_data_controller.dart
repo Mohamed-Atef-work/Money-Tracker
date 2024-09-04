@@ -10,37 +10,21 @@ class PersonsSidesDataController extends GetxController {
 
   PersonsSidesDataController(this._repo);
 
-  List<String> sides = [English.loading.tr];
-  List<String> persons = [English.loading.tr];
-
   List<PersonModel>? personsModel;
   List<SpendingSideModel>? sidesModel;
 
-  String selectedSide = English.loading.tr;
-  String selectedMonth = English.loading.tr;
-  String selectedPerson = English.loading.tr;
+  List<String> sides = [English.loading.tr];
+  List<String> persons = [English.loading.tr];
 
-  void selectPerson(String person) {
-    selectedPerson = person;
-    update();
-  }
-
-  void selectMonth(String month) {
-    selectedMonth = month;
-    update();
-  }
-
-  void selectSide(String side) {
-    selectedSide = side;
-    update();
-  }
+  int selectedMonth = 0;
+  int selectedSide = 0;
+  int selectedPerson = 0;
 
   void getPersons() async {
     try {
       final models = await _repo.getPersons();
       if (models.isNotEmpty) {
         personsModel = models;
-        selectedPerson = personsModel!.first.person;
         persons = List.generate(
           personsModel!.length,
           (index) => personsModel![index].person,
@@ -55,7 +39,6 @@ class PersonsSidesDataController extends GetxController {
       final models = await _repo.getSpendingSides();
       if (models.isNotEmpty) {
         sidesModel = models;
-        selectedSide = sidesModel!.first.spendingSide;
         sides = List.generate(
           models.length,
           (index) => sidesModel![index].spendingSide,
@@ -64,6 +47,36 @@ class PersonsSidesDataController extends GetxController {
       }
     } on LocalDataBaseException catch (exc) {}
   }
+
+  void selectPerson(int person) {
+    selectedPerson = person;
+    update();
+  }
+
+  void selectMonth(int month) {
+    selectedMonth = month;
+    update();
+  }
+
+  void selectSide(int side) {
+    selectedSide = side;
+    update();
+  }
+
+  List<String> translatedMonths = [
+    English.january.tr,
+    English.february.tr,
+    English.mars.tr,
+    English.april.tr,
+    English.may.tr,
+    English.june.tr,
+    English.july.tr,
+    English.august.tr,
+    English.september.tr,
+    English.october.tr,
+    English.november.tr,
+    English.december.tr
+  ];
 
   @override
   void onInit() {

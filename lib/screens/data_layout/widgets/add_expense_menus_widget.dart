@@ -17,17 +17,17 @@ class MenusWidget extends StatelessWidget {
           DropDownMenuComponent(
             items: controller.persons,
             selectedValue: controller.selectedPerson,
-            onChanged: (String? selected) => controller.selectPerson(selected!),
+            onChanged: (int? selected) => controller.selectPerson(selected!),
           ),
           DropDownMenuComponent(
             items: controller.sides,
             selectedValue: controller.selectedSide,
-            onChanged: (String? selected) => controller.selectSide(selected!),
+            onChanged: (int? selected) => controller.selectSide(selected!),
           ),
           DropDownMenuComponent(
-            items: English.monthsList,
+            items: controller.translatedMonths,
             selectedValue: controller.selectedMonth,
-            onChanged: (String? selected) => controller.selectMonth(selected!),
+            onChanged: (int? selected) => controller.selectMonth(selected!),
           ),
         ],
       ),

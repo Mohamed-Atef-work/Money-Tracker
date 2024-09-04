@@ -1,5 +1,3 @@
-import 'package:get/get.dart';
-
 class English {
   static String code = "en";
 
@@ -39,18 +37,18 @@ class English {
   static String databaseIsInReadOnlyMode = "Database is in read-only mode.";
 
   static List<String> monthsList = [
-    English.january.tr,
-    English.february.tr,
-    English.mars.tr,
-    English.april.tr,
-    English.may.tr,
-    English.june.tr,
-    English.july.tr,
-    English.august.tr,
-    English.september.tr,
-    English.october.tr,
-    English.november.tr,
-    English.december.tr
+    English.january,
+    English.february,
+    English.mars,
+    English.april,
+    English.may,
+    English.june,
+    English.july,
+    English.august,
+    English.september,
+    English.october,
+    English.november,
+    English.december
   ];
 
   static Map<String, String> toMap() => {

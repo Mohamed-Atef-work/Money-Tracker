@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/get_utils.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 
 class DropDownMenuComponent extends StatelessWidget {
   final List<String> items;
-  final String selectedValue;
-  final void Function(String? value) onChanged;
+  final int selectedValue;
+  final void Function(int? value) onChanged;
   const DropDownMenuComponent({
     super.key,
     required this.items,
@@ -17,14 +16,17 @@ class DropDownMenuComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     final menuItems = List.generate(
       items.length,
-      (index) => DropdownMenuItem(value: items[index], child: Text(items[index].tr)),
+      (index) => DropdownMenuItem(
+        value: index,
+        child: Text(items[index]),
+      ),
     );
     return Container(
       decoration: BoxDecoration(
         color: kDarkBrown,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: DropdownButton<String>(
+      child: DropdownButton<int>(
         items: menuItems,
         value: selectedValue,
         onChanged: onChanged,
