@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
 import 'package:money_tracker/core/config/local/english.dart';
+import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/screens/data_layout/data_repo/data_repo.dart';
 import 'package:money_tracker/screens/data_layout/models/person_model.dart';
 import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
+import 'package:money_tracker/screens/data_layout/widgets/add_person_or_side_widget.dart';
 
 class PersonsSidesDataController extends GetxController {
   final DataRepo _repo;
@@ -16,9 +19,51 @@ class PersonsSidesDataController extends GetxController {
   List<String> sides = [English.loading.tr];
   List<String> persons = [English.loading.tr];
 
-  int selectedMonth = 0;
   int selectedSide = 0;
+  int selectedMonth = 0;
   int selectedPerson = 0;
+
+  final formKey = GlobalKey<FormState>();
+
+  final sideOrPersonCon = TextEditingController();
+
+  void showPersonSheet() {
+    final sheet = AddPersonOrSideWidget(
+      onPressed: addPerson,
+      title: kPerson,
+    );
+    Get.bottomSheet(sheet);
+  }
+
+  void showSpendingSideSheet() {
+    final sheet = AddPersonOrSideWidget(
+      onPressed: addSpendingSide,
+      title: kSpendingSide,
+    );
+    Get.bottomSheet(sheet);
+  }
+
+  void addPerson() async {
+    if (formKey.currentState!.validate()) {
+      final model = PersonModel(person: sideOrPersonCon.text);
+      try {
+        final models = await _repo.addPerson(model);
+        sideOrPersonCon.text = '';
+        update();
+      } on LocalDataBaseException catch (exc) {}
+    }
+  }
+
+  void addSpendingSide() async {
+    if (formKey.currentState!.validate()) {
+      final model = SpendingSideModel(spendingSide: sideOrPersonCon.text);
+      try {
+        final models = await _repo.addSpendingSide(model);
+        sideOrPersonCon.text = '';
+        update();
+      } on LocalDataBaseException catch (exc) {}
+    }
+  }
 
   void getPersons() async {
     try {
@@ -40,7 +85,7 @@ class PersonsSidesDataController extends GetxController {
       if (models.isNotEmpty) {
         sidesModel = models;
         sides = List.generate(
-          models.length,
+          sidesModel!.length,
           (index) => sidesModel![index].spendingSide,
         );
         update();
@@ -82,7 +127,7 @@ class PersonsSidesDataController extends GetxController {
   void onInit() {
     super.onInit();
 
-    getPersons();
     getSides();
+    getPersons();
   }
 }

@@ -16,6 +16,10 @@ class Arabic {
   static String addExpanse = "اضافة مصروف";
   static String spendingSides = "أوجه الانفاق";
 
+  static String add = "اضافة";
+  static String addPerson = "اضافة شخص";
+  static String addSpendingSide = "اضافة جهة انفاق";
+
   static String may = "مايو";
   static String june = "يونيو";
   static String july = "يوليو";
@@ -50,6 +54,7 @@ class Arabic {
         English.december: december,
         English.february: february,
         English.september: september,
+        English.add: add,
         English.data: data,
         English.money: money,
         English.search: search,
@@ -59,10 +64,12 @@ class Arabic {
         English.appName: appName,
         English.persons: persons,
         English.expanses: expanses,
+        English.addPerson: addPerson,
         English.statistics: statistics,
         English.addExpanse: addExpanse,
         English.description: description,
         English.spendingSides: spendingSides,
+        English.addSpendingSide: addSpendingSide,
         English.databaseIsClosed: databaseIsClosed,
         English.tableDoesNotExist: tableDoesNotExist,
         English.unknownDatabaseError: unknownDatabaseError,

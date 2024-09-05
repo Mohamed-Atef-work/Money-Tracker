@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:money_tracker/core/error/failure.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/screens/data_layout/models/person_model.dart';
@@ -24,7 +22,7 @@ class DataRepoImpl implements DataRepo {
       final exception = LocalDataBaseException.fromSqflite(exc);
       throw exception;
     } catch (exc) {
-      final exception = LocalDataBaseFailure(message: exc.toString());
+      final exception = LocalDataBaseException(exc.toString());
       throw exception;
     }
   }
@@ -44,7 +42,7 @@ class DataRepoImpl implements DataRepo {
       final exception = LocalDataBaseException.fromSqflite(exc);
       throw exception;
     } catch (exc) {
-      final exception = LocalDataBaseFailure(message: exc.toString());
+      final exception = LocalDataBaseException(exc.toString());
       throw exception;
     }
   }
@@ -52,14 +50,14 @@ class DataRepoImpl implements DataRepo {
   @override
   Future<List<SpendingSideModel>> getSpendingSides() async {
     try {
-      final result = await _sqflite.getItems(kPersons);
+      final result = await _sqflite.getItems(kSpendingSides);
       final models = result.map((e) => SpendingSideModel.fromJson(e)).toList();
       return models;
     } on DatabaseException catch (exc) {
       final exception = LocalDataBaseException.fromSqflite(exc);
       throw exception;
     } catch (exc) {
-      final exception = LocalDataBaseFailure(message: exc.toString());
+      final exception = LocalDataBaseException(exc.toString());
       throw exception;
     }
   }
@@ -74,7 +72,55 @@ class DataRepoImpl implements DataRepo {
       final exception = LocalDataBaseException.fromSqflite(exc);
       throw exception;
     } catch (exc) {
-      final exception = LocalDataBaseFailure(message: exc.toString());
+      final exception = LocalDataBaseException(exc.toString());
+      throw exception;
+    }
+  }
+
+  @override
+  Future<void> addExpanse(ExpanseModel model) async {
+    try {
+      final result = await _sqflite.insertItem(
+        data: model.toJson(),
+        tableName: model.month,
+      );
+    } on DatabaseException catch (exc) {
+      final exception = LocalDataBaseException.fromSqflite(exc);
+      throw exception;
+    } catch (exc) {
+      final exception = LocalDataBaseException(exc.toString());
+      throw exception;
+    }
+  }
+
+  @override
+  Future<void> addPerson(PersonModel model) async {
+    try {
+      final result = await _sqflite.insertItem(
+        data: model.toJson(),
+        tableName: kPersons,
+      );
+    } on DatabaseException catch (exc) {
+      final exception = LocalDataBaseException.fromSqflite(exc);
+      throw exception;
+    } catch (exc) {
+      final exception = LocalDataBaseException(exc.toString());
+      throw exception;
+    }
+  }
+
+  @override
+  Future<void> addSpendingSide(SpendingSideModel model) async {
+    try {
+      final result = await _sqflite.insertItem(
+        tableName: kSpendingSides,
+        data: model.toJson(),
+      );
+    } on DatabaseException catch (exc) {
+      final exception = LocalDataBaseException.fromSqflite(exc);
+      throw exception;
+    } catch (exc) {
+      final exception = LocalDataBaseException(exc.toString());
       throw exception;
     }
   }

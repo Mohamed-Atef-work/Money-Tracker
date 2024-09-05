@@ -14,6 +14,7 @@ class English {
   static String february = "February";
   static String september = "September";
 
+  static String add = "Add";
   static String data = "Data";
   static String money = "Money";
   static String search = "search";
@@ -22,11 +23,13 @@ class English {
   static String persons = "Persons";
   static String loading = "Loading";
   static String expanses = "Expanses";
+  static String addPerson = "Add Person";
   static String statistics = "Statistics";
   static String appName = "Money Tracker";
   static String addExpanse = "Add Expanse";
   static String description = "Description";
   static String spendingSides = "Spending Sides";
+  static String addSpendingSide = "Add Spending Side";
 
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";
@@ -64,6 +67,7 @@ class English {
         december: december,
         february: february,
         september: september,
+        add: add,
         data: data,
         money: money,
         search: search,
@@ -73,10 +77,12 @@ class English {
         appName: appName,
         persons: persons,
         expanses: expanses,
+        addPerson: addPerson,
         addExpanse: addExpanse,
         statistics: statistics,
         description: description,
         spendingSides: spendingSides,
+        addSpendingSide: addSpendingSide,
         databaseIsClosed: databaseIsClosed,
         tableDoesNotExist: tableDoesNotExist,
         unknownDatabaseError: unknownDatabaseError,

@@ -4,10 +4,20 @@ import 'package:money_tracker/screens/data_layout/models/spending_side_model.dar
 
 abstract class DataRepo {
   Future<List<PersonModel>> getPersons();
+  Future<void> addPerson(PersonModel model);
+  Future<void> addExpanse(ExpanseModel model);
   Future<List<SpendingSideModel>> getSpendingSides();
+  Future<void> addSpendingSide(SpendingSideModel model);
   Future<List<ExpanseModel>> getMonthExpanses(String month);
   Future<List<ExpanseModel>> getExpansesOfMonthAndSomeOther(
       GetExpansesParams params);
+}
+
+class AddPersonOrSideParams {
+  final String table;
+  final String value;
+
+  AddPersonOrSideParams({required this.table, required this.value});
 }
 
 class GetExpansesParams {

@@ -35,7 +35,7 @@ class DropDownMenuComponent extends StatelessWidget {
         padding: kHorizontalPadding10,
         underline: const SizedBox.shrink(),
         borderRadius: BorderRadius.circular(20),
-        style: const TextStyle(color: Colors.white, fontSize: 18),
+        style: const TextStyle(color: Colors.white, fontSize: 16),
         icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
       ),
     );
