@@ -17,9 +17,9 @@ class AppBindings extends Bindings {
     Get.put(PersonsSidesDataController(datRepo), permanent: true);
 
     Get.lazyPut(() => DataLayoutController(), fenix: true);
-    Get.lazyPut(() => PersonsDataController(), fenix: true);
     Get.lazyPut(() => MonthsDataController(datRepo), fenix: true);
-    Get.lazyPut(() => SpendingSidesDataController(), fenix: true);
     Get.lazyPut(() => AddExpanseController(datRepo), fenix: true);
+    Get.lazyPut(() => PersonsDataController(datRepo), fenix: true);
+    Get.lazyPut(() => SpendingSidesDataController(datRepo), fenix: true);
   }
 }

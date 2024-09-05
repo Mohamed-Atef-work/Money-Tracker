@@ -1,6 +1,8 @@
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:money_tracker/core/components/custom_text.dart';
 import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:money_tracker/core/utils/images.dart';
 
 class MessengerComponent extends StatelessWidget {
   final String mess;
@@ -15,13 +17,12 @@ class MessengerComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Expanded(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          //SvgPicture.asset(
-          Image.asset(
-            "Images.message",
+          SvgPicture.asset(
+            Images.message,
             width: imageWidth ?? context.width * 0.4,
             height: imageHeight ?? context.height * 0.3,
           ),

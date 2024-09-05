@@ -30,6 +30,7 @@ class English {
   static String description = "Description";
   static String spendingSides = "Spending Sides";
   static String addSpendingSide = "Add Spending Side";
+  static String thereIsNoData = "There Is No Data";
 
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";
@@ -81,6 +82,7 @@ class English {
         addExpanse: addExpanse,
         statistics: statistics,
         description: description,
+        thereIsNoData: thereIsNoData,
         spendingSides: spendingSides,
         addSpendingSide: addSpendingSide,
         databaseIsClosed: databaseIsClosed,

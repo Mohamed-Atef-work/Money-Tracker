@@ -15,6 +15,7 @@ class Arabic {
   static String appName = "متتبع المال";
   static String addExpanse = "اضافة مصروف";
   static String spendingSides = "أوجه الانفاق";
+  static String thereIsNoData = "لا يوجد بيانات";
 
   static String add = "اضافة";
   static String addPerson = "اضافة شخص";
@@ -69,6 +70,7 @@ class Arabic {
         English.addExpanse: addExpanse,
         English.description: description,
         English.spendingSides: spendingSides,
+        English.thereIsNoData: thereIsNoData,
         English.addSpendingSide: addSpendingSide,
         English.databaseIsClosed: databaseIsClosed,
         English.tableDoesNotExist: tableDoesNotExist,

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:money_tracker/core/components/expenses_component.dart';
+import 'package:money_tracker/core/components/messenger_component.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
@@ -30,14 +31,23 @@ class MonthsDataView extends StatelessWidget {
             ),
             CustomButton(
               text: English.search.tr,
-              onPressed: () => monthController.getExpanses(
-                  English.monthsList[personSideController.selectedMonth]),
+              onPressed: () {
+                final month =
+                    English.monthsList[personSideController.selectedMonth];
+                monthController.getExpanses(month);
+              },
             ),
           ],
         ),
         const SizedBox(height: 10),
         GetBuilder<MonthsDataController>(
-          builder: (controller) => ExpansesListViewWidget(controller.expanses),
+          builder: (controller) {
+            if (controller.expanses.isEmpty) {
+              return MessengerComponent(English.thereIsNoData.tr);
+            } else {
+              return ExpansesListViewWidget(controller.expanses);
+            }
+          },
         ),
       ],
     );
