@@ -17,7 +17,10 @@ class AddPersonOrSideParams {
   final String table;
   final String value;
 
-  AddPersonOrSideParams({required this.table, required this.value});
+  AddPersonOrSideParams({
+    required this.table,
+    required this.value,
+  });
 }
 
 class GetExpansesParams {

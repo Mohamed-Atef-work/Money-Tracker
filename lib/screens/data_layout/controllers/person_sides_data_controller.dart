@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:money_tracker/core/utils/enums.dart';
+import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
@@ -12,6 +14,9 @@ class PersonsSidesDataController extends GetxController {
   final DataRepo _repo;
 
   PersonsSidesDataController(this._repo);
+
+  RequestState addPersonOrSideState = RequestState.initial;
+  RequestState addExpanseState = RequestState.initial;
 
   List<PersonModel>? personsModel;
   List<SpendingSideModel>? sidesModel;
@@ -28,7 +33,7 @@ class PersonsSidesDataController extends GetxController {
   final sideOrPersonCon = TextEditingController();
 
   void showPersonSheet() {
-    final sheet = AddPersonOrSideWidget(
+    Widget sheet = AddPersonOrSideWidget(
       onPressed: addPerson,
       title: kPerson,
     );
@@ -36,7 +41,7 @@ class PersonsSidesDataController extends GetxController {
   }
 
   void showSpendingSideSheet() {
-    final sheet = AddPersonOrSideWidget(
+    Widget sheet = AddPersonOrSideWidget(
       onPressed: addSpendingSide,
       title: kSpendingSide,
     );
@@ -45,23 +50,38 @@ class PersonsSidesDataController extends GetxController {
 
   void addPerson() async {
     if (formKey.currentState!.validate()) {
+      addPersonOrSideState = RequestState.loading;
+      update();
+
       final model = PersonModel(person: sideOrPersonCon.text);
       try {
         final models = await _repo.addPerson(model);
+        persons.add(sideOrPersonCon.text);
         sideOrPersonCon.text = '';
+        addPersonOrSideState = RequestState.success;
+        delayedUpdate();
+      } on LocalDataBaseException catch (exc) {
+        addPersonOrSideState = RequestState.error;
         update();
-      } on LocalDataBaseException catch (exc) {}
+      }
     }
   }
 
   void addSpendingSide() async {
     if (formKey.currentState!.validate()) {
+      addPersonOrSideState = RequestState.loading;
+      update();
       final model = SpendingSideModel(spendingSide: sideOrPersonCon.text);
       try {
         final models = await _repo.addSpendingSide(model);
+        sides.add(sideOrPersonCon.text);
         sideOrPersonCon.text = '';
+        addPersonOrSideState = RequestState.success;
+        delayedUpdate();
+      } on LocalDataBaseException catch (exc) {
+        addPersonOrSideState = RequestState.error;
         update();
-      } on LocalDataBaseException catch (exc) {}
+      }
     }
   }
 

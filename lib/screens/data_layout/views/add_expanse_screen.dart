@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:money_tracker/core/components/loading_widget.dart';
+import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/core/utils/images.dart';
 import 'package:money_tracker/core/components/app_bar.dart';
 import 'package:money_tracker/core/config/local/english.dart';
@@ -54,12 +56,18 @@ class AddExpanseScreen extends StatelessWidget {
           ),
           SizedBox(height: padding),
           GetBuilder<AddExpanseController>(
-            builder: (controller) => CustomButton(
-              width: context.width * 0.5,
-              text: English.addExpanse.tr,
-              height: context.height * 0.06,
-              onPressed: () => controller.addExpanses(),
-            ),
+            builder: (controller) {
+              if (controller.expanseState == RequestState.loading) {
+                return const LoadingWidget();
+              } else {
+                return CustomButton(
+                  width: context.width * 0.5,
+                  text: English.addExpanse.tr,
+                  height: context.height * 0.06,
+                  onPressed: () => controller.addExpanses(),
+                );
+              }
+            },
           ),
           const SizedBox(height: 20),
           Row(
@@ -75,7 +83,7 @@ class AddExpanseScreen extends StatelessWidget {
                 textColor: Colors.black,
                 backgroundColor: kWhiteGray,
                 text: English.addSpendingSide.tr,
-                onPressed: () =>personsSidesController.showSpendingSideSheet(),
+                onPressed: () => personsSidesController.showSpendingSideSheet(),
               ),
             ],
           ),
