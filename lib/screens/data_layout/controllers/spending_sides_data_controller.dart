@@ -18,9 +18,12 @@ class SpendingSidesDataController extends GetxController {
       final params = _params();
       final models = await _repo.getExpansesOfMonthAndSomeOther(params);
       expanses = models;
+      if (models.isEmpty) {
+        expanses.clear();
+      }
       update();
     } on LocalDataBaseException catch (exc) {
-      print("error is --------> ${exc}");
+      print("error is ---------------> ${exc.message}");
     }
   }
 

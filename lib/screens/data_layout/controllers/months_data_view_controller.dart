@@ -12,7 +12,12 @@ class MonthsDataController extends GetxController {
     try {
       final models = await _repo.getMonthExpanses(month);
       expanses = models;
+      if (models.isEmpty) {
+        expanses.clear();
+      }
       update();
-    } on LocalDataBaseException catch (exc) {}
+    } on LocalDataBaseException catch (exc) {
+      print("error is ---------> ${exc.toString()}");
+    }
   }
 }
