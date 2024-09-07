@@ -21,7 +21,7 @@ class AddPersonOrSideWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseModelSheetComponent(
-      child: GetBuilder<PersonsSidesDataController>(
+      child: GetBuilder<PersonsSidesController>(
         builder: (controller) {
           if (controller.addPersonOrSideState == RequestState.loading) {
             return const LoadingWidget();

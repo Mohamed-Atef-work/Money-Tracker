@@ -16,6 +16,7 @@ class ExpenseComponent extends StatelessWidget {
     final width = context.width;
     final height = context.height;
     return Card(
+      color: kWhiteGray,
       child: Row(
         children: [
           Padding(

@@ -10,7 +10,7 @@ class MenusWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<PersonsSidesDataController>(
+    return GetBuilder<PersonsSidesController>(
       builder: (controller) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

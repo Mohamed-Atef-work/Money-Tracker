@@ -29,7 +29,7 @@ class PersonsDataController extends GetxController {
   }
 
   GetExpansesParams _params() {
-    final personsSides = Get.find<PersonsSidesDataController>();
+    final personsSides = Get.find<PersonsSidesController>();
     final month = English.monthsList[personsSides.selectedMonth];
     final person = personsSides.persons[personsSides.selectedPerson];
 

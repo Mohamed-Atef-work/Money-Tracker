@@ -2,7 +2,7 @@ import 'package:money_tracker/screens/data_layout/views/add_expanse_screen.dart'
 import 'package:money_tracker/screens/data_layout/views/layout_screen.dart';
 import 'package:money_tracker/core/config/routes/routes_strings.dart';
 import 'package:money_tracker/screens/home_panel_screen/view.dart';
-import 'package:money_tracker/screens/statistics_layout/view.dart';
+import 'package:money_tracker/screens/statistics_layout/views/statistics_layout_screen.dart';
 import 'package:money_tracker/test_screen.dart';
 import 'package:get/get.dart';
 

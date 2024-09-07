@@ -10,10 +10,10 @@ import 'package:money_tracker/screens/data_layout/models/person_model.dart';
 import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
 import 'package:money_tracker/screens/data_layout/widgets/add_person_or_side_widget.dart';
 
-class PersonsSidesDataController extends GetxController {
+class PersonsSidesController extends GetxController {
   final DataRepo _repo;
 
-  PersonsSidesDataController(this._repo);
+  PersonsSidesController(this._repo);
 
   RequestState addPersonOrSideState = RequestState.initial;
   RequestState addExpanseState = RequestState.initial;

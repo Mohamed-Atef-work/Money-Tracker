@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:money_tracker/core/components/expenses_component.dart';
-import 'package:money_tracker/core/components/messenger_component.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
+import 'package:money_tracker/core/components/expenses_component.dart';
+import 'package:money_tracker/core/components/messenger_component.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
 import 'package:money_tracker/screens/data_layout/controllers/months_data_view_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
@@ -14,7 +14,7 @@ class MonthsDataView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final monthController = Get.find<MonthsDataController>();
-    final personSideController = Get.find<PersonsSidesDataController>();
+    final personSideController = Get.find<PersonsSidesController>();
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -22,7 +22,7 @@ class MonthsDataView extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            GetBuilder<PersonsSidesDataController>(
+            GetBuilder<PersonsSidesController>(
               builder: (controller) => DropDownMenuComponent(
                 items: controller.translatedMonths,
                 selectedValue: controller.selectedMonth,

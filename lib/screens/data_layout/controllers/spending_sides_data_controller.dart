@@ -28,7 +28,7 @@ class SpendingSidesDataController extends GetxController {
   }
 
   GetExpansesParams _params() {
-    final personsSides = Get.find<PersonsSidesDataController>();
+    final personsSides = Get.find<PersonsSidesController>();
     final spendingSide = personsSides.sides[personsSides.selectedSide];
     final month = English.monthsList[personsSides.selectedMonth];
     final params = GetExpansesParams(

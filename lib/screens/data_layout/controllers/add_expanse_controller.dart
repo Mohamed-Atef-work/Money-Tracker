@@ -24,7 +24,7 @@ class AddExpanseController extends GetxController {
     if (formKey.currentState!.validate()) {
       expanseState = RequestState.loading;
       update();
-      final personsSidesCon = Get.find<PersonsSidesDataController>();
+      final personsSidesCon = Get.find<PersonsSidesController>();
       final model = ExpanseModel(
         money: int.parse(moneyCon.text),
         description: descriptionCon.text,
