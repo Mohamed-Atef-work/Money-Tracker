@@ -7,11 +7,12 @@ import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/screens/data_layout/data_repo/data_repo.dart';
 import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
+import 'package:money_tracker/screens/data_layout/use_cases/add_expanse_use_case.dart';
 
 class AddExpanseController extends GetxController {
-  final DataRepo _repo;
+  final AddExpanseUseCase _addExpanse;
 
-  AddExpanseController(this._repo);
+  AddExpanseController(this._addExpanse);
 
   RequestState expanseState = RequestState.initial;
 
@@ -24,16 +25,9 @@ class AddExpanseController extends GetxController {
     if (formKey.currentState!.validate()) {
       expanseState = RequestState.loading;
       update();
-      final personsSidesCon = Get.find<PersonsSidesController>();
-      final model = ExpanseModel(
-        money: int.parse(moneyCon.text),
-        description: descriptionCon.text,
-        month: English.monthsList[personsSidesCon.selectedMonth],
-        person: personsSidesCon.persons[personsSidesCon.selectedPerson],
-        spendingSide: personsSidesCon.sides[personsSidesCon.selectedSide],
-      );
+      final expanse = _expanseModel();
       try {
-        await _repo.addExpanse(model);
+        await _addExpanse.call(expanse);
         expanseState = RequestState.success;
         await delayedUpdate();
         moneyCon.text = "";
@@ -43,5 +37,17 @@ class AddExpanseController extends GetxController {
         update();
       }
     }
+  }
+
+  ExpanseModel _expanseModel() {
+    final personsSidesCon = Get.find<PersonsSidesController>();
+    final model = ExpanseModel(
+      money: int.parse(moneyCon.text),
+      description: descriptionCon.text,
+      month: English.monthsList[personsSidesCon.selectedMonth],
+      person: personsSidesCon.persons[personsSidesCon.selectedPerson],
+      spendingSide: personsSidesCon.sides[personsSidesCon.selectedSide],
+    );
+    return model;
   }
 }

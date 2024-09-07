@@ -63,8 +63,8 @@ class SqfliteServices {
     return response;
   }
 
-  Future<int> updateItem({
-    required int id,
+  Future<int> updateItemWithId({
+    required dynamic id,
     required String tableName,
     required Map<String, dynamic> data,
   }) async {
@@ -242,7 +242,8 @@ class SqfliteServices {
     batch.execute(
       '''$kCreateTable $kTotals
       (
-      $kId $kInteger $kPrimary $kKey,
+      $kId $kText $kPrimary $kKey,
+      $kIdName $kText,
       $kTotal $kText
       )''',
     );

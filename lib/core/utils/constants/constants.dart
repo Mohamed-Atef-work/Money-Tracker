@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const kHorizontalPadding5 = EdgeInsets.symmetric(horizontal: 5);
-const kHorizontalPadding10 = EdgeInsets.symmetric(horizontal: 10);
 const kHorizontal10Vertical5 =
     EdgeInsets.symmetric(horizontal: 10, vertical: 5);
+const kHorizontalPadding5 = EdgeInsets.symmetric(horizontal: 5);
+const kHorizontalPadding10 = EdgeInsets.symmetric(horizontal: 10);
 const kDuration1Second = Duration(seconds: 1);
 const kPrimaryColorYellow = Color(0xFFffbd29);
 const kWhiteGray = Color(0xFFffe3ac);
@@ -11,17 +11,25 @@ const kDarkBrown = Color(0xFF785326);
 const kWhite = Colors.white;
 const kBlack = Colors.black;
 
-const String kId = "id";
-const String kMoney = "money";
-const String kMonth = "month";
-const String kTotal = "kTotal";
-const String kMonths = "months";
-const String kPerson = "person";
-const String kTotals = "kTotals";
-const String kPersons = "persons";
-const String kDescription = "description";
-const String kSpendingSide = "spendingSide";
-const String kSpendingSides = "spendingSides";
+const String kId = "Id";
+const String kMoney = "Money";
+const String kMonth = "Month";
+const String kTotal = "Total";
+const String kIdName = "IdName";
+const String kMonths = "Months";
+const String kPerson = "Person";
+const String kTotals = "Totals";
+const String kPersons = "Persons";
+const String kMonthSide = "MonthSide";
+const String kMonthPerson = "MonthPerson";
+const String kDescription = "Description";
+const String kSpendingSide = "SpendingSide";
+const String kSpendingSides = "SpendingSides";
+const String kMonthPersonSide = "MonthPersonSide";
+String monthSide(String month, String side) => month + side;
+String monthPerson(String month, String person) => month + person;
+String monthPersonSide(String month, String person, String side) =>
+    month + person + side;
 
 const String kMay = "May";
 const String kJune = "June";
