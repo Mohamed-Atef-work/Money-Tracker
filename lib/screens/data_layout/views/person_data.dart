@@ -4,10 +4,10 @@ import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/expenses_component.dart';
 import 'package:money_tracker/core/components/messenger_component.dart';
-import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
 import 'package:money_tracker/screens/data_layout/controllers/persons_data_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
+import 'package:money_tracker/screens/repositories/models/expanse_model.dart';
 
 class PersonsDataView extends StatelessWidget {
   const PersonsDataView({super.key});
@@ -54,12 +54,12 @@ class PersonsDataView extends StatelessWidget {
 }
 
 final model = ExpanseModel(
-  month: "january",
   money: 30,
+  month: "january",
   person: "Mohamed",
+  spendingSide: "Shopping",
   description:
       "When i was shopping i bought a coat and a lot of kilos of mango,then i went to the library and bought some book,then i went to the library and bought some book,then i went to the library and bought some book",
-  spendingSide: "Shopping",
 );
 
 final expanses = [

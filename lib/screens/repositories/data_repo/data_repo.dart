@@ -1,6 +1,7 @@
-import 'package:money_tracker/screens/data_layout/models/person_model.dart';
-import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
-import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
+import 'package:money_tracker/screens/repositories/models/person_model.dart';
+import 'package:money_tracker/screens/repositories/models/expanse_model.dart';
+
+import 'package:money_tracker/screens/repositories/models/spending_side_model.dart';
 
 abstract class DataRepo {
   Future<List<PersonModel>> getPersons();

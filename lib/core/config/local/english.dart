@@ -41,18 +41,18 @@ class English {
   static String databaseIsInReadOnlyMode = "Database is in read-only mode.";
 
   static List<String> monthsList = [
-    English.january,
-    English.february,
-    English.mars,
-    English.april,
-    English.may,
-    English.june,
-    English.july,
-    English.august,
-    English.september,
-    English.october,
-    English.november,
-    English.december
+    january,
+    february,
+    mars,
+    april,
+    may,
+    june,
+    july,
+    august,
+    september,
+    october,
+    november,
+    december
   ];
 
   static Map<String, String> toMap() => {

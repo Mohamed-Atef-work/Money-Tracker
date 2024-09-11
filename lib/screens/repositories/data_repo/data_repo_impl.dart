@@ -1,11 +1,11 @@
+import 'data_repo.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
-import 'package:money_tracker/screens/data_layout/models/person_model.dart';
-import 'package:money_tracker/screens/data_layout/data_repo/data_repo.dart';
-import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
+import 'package:money_tracker/screens/repositories/models/person_model.dart';
+import 'package:money_tracker/screens/repositories/models/expanse_model.dart';
 import 'package:money_tracker/core/utils/services/sqflite/sqflite_services.dart';
-import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
+import 'package:money_tracker/screens/repositories/models/spending_side_model.dart';
 
 class DataRepoImpl implements DataRepo {
   final SqfliteServices _sqflite;

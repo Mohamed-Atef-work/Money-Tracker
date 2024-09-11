@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/scrollable_row_component.dart';
-import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
+
 import 'package:money_tracker/core/components/expenses_component.dart';
+
+import 'screens/repositories/models/expanse_model.dart';
 
 class TestScreen extends StatelessWidget {
   const TestScreen({super.key});

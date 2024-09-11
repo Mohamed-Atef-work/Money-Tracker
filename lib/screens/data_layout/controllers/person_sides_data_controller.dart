@@ -5,9 +5,9 @@ import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
-import 'package:money_tracker/screens/data_layout/data_repo/data_repo.dart';
-import 'package:money_tracker/screens/data_layout/models/person_model.dart';
-import 'package:money_tracker/screens/data_layout/models/spending_side_model.dart';
+import 'package:money_tracker/screens/repositories/data_repo/data_repo.dart';
+import 'package:money_tracker/screens/repositories/models/person_model.dart';
+import 'package:money_tracker/screens/repositories/models/spending_side_model.dart';
 import 'package:money_tracker/screens/data_layout/widgets/add_person_or_side_widget.dart';
 
 class PersonsSidesController extends GetxController {

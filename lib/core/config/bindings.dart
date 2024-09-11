@@ -1,17 +1,17 @@
 import 'package:get/get.dart';
-import 'package:money_tracker/screens/data_layout/use_cases/add_expanse_use_case.dart';
 import 'package:money_tracker/screens/statistics_layout/controller.dart';
 import 'package:money_tracker/core/utils/services/sqflite/sqflite_services.dart';
-import 'package:money_tracker/screens/data_layout/data_repo/data_repo_impl.dart';
-import 'package:money_tracker/screens/statistics_layout/repo/statistics_repo_impl.dart';
+import 'package:money_tracker/screens/repositories/data_repo/data_repo_impl.dart';
+import 'package:money_tracker/screens/data_layout/use_cases/add_expanse_use_case.dart';
 import 'package:money_tracker/screens/data_layout/controllers/add_expanse_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/data_layout_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/persons_data_controller.dart';
+import 'package:money_tracker/screens/repositories/statistics_repo/statistics_repo_impl.dart';
 import 'package:money_tracker/screens/data_layout/controllers/months_data_view_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/spending_sides_data_controller.dart';
+import 'package:money_tracker/screens/statistics_layout/controllers/months_statistics_controller.dart';
 import 'package:money_tracker/screens/statistics_layout/controllers/persons_statistics_controller.dart';
-import 'package:money_tracker/screens/statistics_layout/controllers/months_statistics_view_controller.dart';
 import 'package:money_tracker/screens/statistics_layout/controllers/spending_sides_statistics_controller.dart';
 
 class AppBindings extends Bindings {

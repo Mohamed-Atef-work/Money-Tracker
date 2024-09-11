@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_tracker/money_tracker_app.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
-import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
 import 'package:money_tracker/core/utils/services/sqflite/sqflite_services.dart';
-import 'package:money_tracker/screens/statistics_layout/repo/statistics_repo_impl.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -30,8 +30,8 @@ class TotalModel {
 
   @override
   String toString() => '''
-    $kId ----> $id
-    $kTotal ----> $total
+    $kId --------> $id
+    $kTotal -----> $total
     $kIdName ----> $idName
     ''';
 }

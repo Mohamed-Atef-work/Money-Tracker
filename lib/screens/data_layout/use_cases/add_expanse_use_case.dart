@@ -1,6 +1,6 @@
-import 'package:money_tracker/screens/data_layout/data_repo/data_repo.dart';
-import 'package:money_tracker/screens/data_layout/models/expanse_model.dart';
-import 'package:money_tracker/screens/statistics_layout/repo/statistics_repo.dart';
+import 'package:money_tracker/screens/repositories/data_repo/data_repo.dart';
+import 'package:money_tracker/screens/repositories/models/expanse_model.dart';
+import 'package:money_tracker/screens/repositories/statistics_repo/statistics_repo.dart';
 
 class AddExpanseUseCase {
   final DataRepo _dataRepo;
@@ -12,7 +12,7 @@ class AddExpanseUseCase {
     await _dataRepo.addExpanse(expanse);
 
     final params = _params(expanse);
-    final totals = await _statisticsRepo.getTotalsWithIds(params);
+    final totals = await _statisticsRepo.getTotalsBeforeAddingExpanse(params);
 
     final addTotalsParams = AddTotalsParams(
       expanseMoney: expanse.money,
