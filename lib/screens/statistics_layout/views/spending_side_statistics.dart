@@ -30,7 +30,7 @@ class SpendingSidesStatisticsView extends StatelessWidget {
               ),
               CustomButton(
                 text: English.search.tr,
-                onPressed: () {},
+                onPressed: () =>sidesController.getData(),
               ),
             ],
           ),
