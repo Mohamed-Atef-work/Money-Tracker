@@ -12,6 +12,7 @@ class MonthsStatisticsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final personSideController = Get.find<PersonsSidesController>();
+    final cont = Get.find<MonthsStatisticsController>();
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -28,7 +29,7 @@ class MonthsStatisticsView extends StatelessWidget {
             ),
             CustomButton(
               text: English.search.tr,
-              onPressed: () {},
+              onPressed: () => cont.getData(),
             ),
           ],
         ),
