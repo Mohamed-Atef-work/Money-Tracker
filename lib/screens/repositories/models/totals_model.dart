@@ -22,7 +22,7 @@ class TotalModel {
         idName: idName,
       );
 
-  toJson(int expanseMoney) => {
+  Map<String, dynamic> toJson(int expanseMoney) => {
         kId: id,
         kIdName: idName,
         kTotal: (total + expanseMoney).toString(),

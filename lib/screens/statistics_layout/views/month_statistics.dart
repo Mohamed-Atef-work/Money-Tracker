@@ -16,8 +16,8 @@ class MonthsStatisticsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final personSideController = Get.find<PersonsSidesController>();
-    final cont = Get.find<MonthsStatisticsController>();
+    final personSide = Get.find<PersonsSidesController>();
+    final monthStatistics = Get.find<MonthsStatisticsController>();
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -34,25 +34,30 @@ class MonthsStatisticsView extends StatelessWidget {
             ),
             CustomButton(
               text: English.search.tr,
-              onPressed: () => cont.getData(),
+              onPressed: () => monthStatistics.getData(),
             ),
           ],
         ),
         const SizedBox(height: 10),
-        GetBuilder<MonthsStatisticsController>(builder: (controller) {
-          if (controller.dataState == RequestState.loading) {
-            return const LoadingWidget();
-          } else {
-            List<FlSpot> spots() => List.generate(
-                  controller.eachMonthsTotal.length,
-                  (index) => FlSpot(
-                    index.toDouble(),
-                    controller.eachMonthsTotal[index].total.toDouble(),
-                  ),
-                );
-            return StatisticsLineGraphWidget(spots: spots());
-          }
-        }),
+        GetBuilder<MonthsStatisticsController>(
+          builder: (controller) {
+            if (controller.dataState == RequestState.loading) {
+              return const LoadingWidget();
+            } else {
+              List<FlSpot> spots() => List.generate(
+                    controller.eachMonthsTotal.length,
+                    (index) => FlSpot(
+                      index.toDouble(),
+                      controller.eachMonthsTotal[index].total.toDouble(),
+                    ),
+                  );
+              return StatisticsLineGraphWidget(
+                spots: spots(),
+                leftTitle: "_",
+              );
+            }
+          },
+        ),
       ],
     );
   }

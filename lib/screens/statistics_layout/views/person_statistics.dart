@@ -16,6 +16,7 @@ class PersonsStatisticsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final personsSides = Get.find<PersonsSidesController>();
     final personsController = Get.find<PersonsStatisticsController>();
     return Column(
       children: [
@@ -53,7 +54,10 @@ class PersonsStatisticsView extends StatelessWidget {
                     controller.personTotalEachMonth[index].total.toDouble(),
                   ),
                 );
-            return StatisticsLineGraphWidget(spots: spots());
+            return StatisticsLineGraphWidget(
+              spots: spots(),
+              leftTitle: personsSides.persons[personsSides.selectedPerson],
+            );
           }
         }),
       ],

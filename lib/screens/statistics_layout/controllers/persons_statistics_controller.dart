@@ -60,6 +60,7 @@ class PersonsStatisticsController extends GetxController {
       update();
     } on LocalDataBaseException catch (exc) {
       dataState = RequestState.error;
+      update();
     }
   }
 

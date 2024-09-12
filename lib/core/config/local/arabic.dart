@@ -14,9 +14,12 @@ class Arabic {
   static String statistics = "احصائيات";
   static String appName = "متتبع المال";
   static String addExpanse = "اضافة مصروف";
+  static String spendingSide = "وجه الانفاق";
   static String spendingSides = "أوجه الانفاق";
   static String thereIsNoData = "لا يوجد بيانات";
 
+  static String total = "المجموع";
+  static String month = "الشهر";
   static String add = "اضافة";
   static String addPerson = "اضافة شخص";
   static String addSpendingSide = "اضافة جهة انفاق";
@@ -55,6 +58,8 @@ class Arabic {
         English.december: december,
         English.february: february,
         English.september: september,
+        English.total: total,
+        English.month: month,
         English.add: add,
         English.data: data,
         English.money: money,
@@ -69,6 +74,7 @@ class Arabic {
         English.statistics: statistics,
         English.addExpanse: addExpanse,
         English.description: description,
+        English.spendingSide: spendingSide,
         English.spendingSides: spendingSides,
         English.thereIsNoData: thereIsNoData,
         English.addSpendingSide: addSpendingSide,

@@ -15,6 +15,8 @@ class English {
   static String september = "September";
 
   static String add = "Add";
+  static String total = "Total";
+  static String month = "Month";
   static String data = "Data";
   static String money = "Money";
   static String search = "search";
@@ -29,8 +31,9 @@ class English {
   static String addExpanse = "Add Expanse";
   static String description = "Description";
   static String spendingSides = "Spending Sides";
-  static String addSpendingSide = "Add Spending Side";
+  static String spendingSide = "Spending Side";
   static String thereIsNoData = "There Is No Data";
+  static String addSpendingSide = "Add Spending Side";
 
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";
@@ -68,6 +71,8 @@ class English {
         december: december,
         february: february,
         september: september,
+        total: total,
+        month: month,
         add: add,
         data: data,
         money: money,
@@ -84,6 +89,7 @@ class English {
         description: description,
         thereIsNoData: thereIsNoData,
         spendingSides: spendingSides,
+        spendingSide: spendingSide,
         addSpendingSide: addSpendingSide,
         databaseIsClosed: databaseIsClosed,
         tableDoesNotExist: tableDoesNotExist,

@@ -110,17 +110,17 @@ class StatisticsRepoImpl implements StatisticsRepo {
 
   Future<List<TotalModel>> _getTotals(List<String> ids) async {
     List<TotalModel> models = [];
-    TotalModel? model;
+    TotalModel model;
     for (String id in ids) {
       model = await _getOneTotal(id);
-      if (model != null) {
-        models.add(model);
-      }
+      //if (model != null) {
+      models.add(model);
+      //}
     }
     return models;
   }
 
-  Future<TotalModel?> _getOneTotal(String id) async {
+  Future<TotalModel> _getOneTotal(String id) async {
     final result = await _services.getItemsWithValue(
       values: [id],
       tableName: kTotals,
@@ -129,7 +129,9 @@ class StatisticsRepoImpl implements StatisticsRepo {
     if (result.isNotEmpty) {
       final model = TotalModel.fromJson(result.first);
       return model;
+    } else {
+      final model = TotalModel.fromNoJson(id, id);
+      return model;
     }
-    return null;
   }
 }
