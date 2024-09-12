@@ -15,43 +15,46 @@ class MonthsStatisticsController extends GetxController {
 
   RequestState dataState = RequestState.initial;
 
-  List<TotalModel> monthsTotals = [];
-  List<TotalModel> sidsOfMonthTotals = [];
-  List<TotalModel> personsOfMonthTotals = [];
+  List<TotalModel> eachMonthsTotal = [];
+  List<TotalModel> eachSideOfTotal = [];
+  List<TotalModel> eachPersonTotal = [];
 
-  Future<void> _getAllMonthsTotals() async {
-    monthsTotals = await _repo.getTotalsWithIds(English.monthsList);
-    monthsTotals.map((e) => print(e.toString())).toList();
+  Future<void> _eachMonthTotal() async {
+    eachMonthsTotal = await _repo.getTotalsWithIds(English.monthsList);
+    eachMonthsTotal.map((e) => print(e.toString())).toList();
   }
 
-  Future<void> _getAllSpendingSidesTotalsOfMonth() async {
+  Future<void> eachSideTotalOfMonth() async {
     final month = English.monthsList[personsSides.selectedMonth];
     final ids =
         personsSides.sides.map((side) => monthSide(month, side)).toList();
-    sidsOfMonthTotals = await _repo.getTotalsWithIds(ids);
-    sidsOfMonthTotals.map((e) => print(e.toString())).toList();
+    eachSideOfTotal = await _repo.getTotalsWithIds(ids);
+    eachSideOfTotal.map((e) => print(e.toString())).toList();
   }
 
-  Future<void> _getAllPersonsTotalsOfMonth() async {
+  Future<void> _eachPersonTotalOfMonth() async {
     final month = English.monthsList[personsSides.selectedMonth];
     final ids = personsSides.persons
         .map((persons) => monthPerson(month, persons))
         .toList();
-    personsOfMonthTotals = await _repo.getTotalsWithIds(ids);
-    personsOfMonthTotals.map((e) => print(e.toString())).toList();
+    eachPersonTotal = await _repo.getTotalsWithIds(ids);
+    eachPersonTotal.map((e) => print(e.toString())).toList();
   }
 
   void getData() async {
     try {
       dataState = RequestState.loading;
+      update();
 
-      await _getAllMonthsTotals();
-      await _getAllPersonsTotalsOfMonth();
-      await _getAllSpendingSidesTotalsOfMonth();
+      await _eachMonthTotal();
+      await _eachPersonTotalOfMonth();
+      await eachSideTotalOfMonth();
 
       dataState = RequestState.success;
+      update();
     } on LocalDataBaseException catch (exc) {
       dataState = RequestState.error;
+      update();
     }
   }
 

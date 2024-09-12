@@ -19,13 +19,7 @@ class StatisticsLayoutScreen extends StatelessWidget {
     return GetBuilder<StatisticsLayoutController>(
       builder: (controller) => Scaffold(
         appBar: CustomAppBar(title: English.statistics),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomText(text: controller.titles[controller.index]),
-            _body(controller.index),
-          ],
-        ),
+        body: _body(controller.index),
         bottomNavigationBar: AppBottomNav(
           index: controller.index,
           onTap: (index) => controller.changeIndex(index),

@@ -16,8 +16,8 @@ class PersonsStatisticsController extends GetxController {
 
   RequestState dataState = RequestState.initial;
 
-  List<TotalModel> personTotalEachMonth = [];
   List<TotalModel> eachPersonOfMonth = [];
+  List<TotalModel> personTotalEachMonth = [];
   List<TotalModel> eachSideOfPersonOfMonth = [];
 
   Future<void> _personTotalEachMonth() async {
@@ -50,12 +50,14 @@ class PersonsStatisticsController extends GetxController {
   void getData() async {
     try {
       dataState = RequestState.loading;
+      update();
 
       await _personTotalEachMonth();
       await _eachPersonTotalOfMonth();
       await _eachSideTotalOfPersonOfMonth();
 
       dataState = RequestState.success;
+      update();
     } on LocalDataBaseException catch (exc) {
       dataState = RequestState.error;
     }

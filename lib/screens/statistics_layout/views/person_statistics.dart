@@ -1,11 +1,15 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:money_tracker/core/components/loading_widget.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
+import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/screens/repositories/models/expanse_model.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
 import 'package:money_tracker/screens/statistics_layout/controllers/persons_statistics_controller.dart';
+import 'package:money_tracker/screens/statistics_layout/widgets/line_graph_widget.dart';
 
 class PersonsStatisticsView extends StatelessWidget {
   const PersonsStatisticsView({super.key});
@@ -37,6 +41,21 @@ class PersonsStatisticsView extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(height: 10),
+        GetBuilder<PersonsStatisticsController>(builder: (controller) {
+          if (controller.dataState == RequestState.loading) {
+            return const LoadingWidget();
+          } else {
+            List<FlSpot> spots() => List.generate(
+                  controller.personTotalEachMonth.length,
+                  (index) => FlSpot(
+                    index.toDouble(),
+                    controller.personTotalEachMonth[index].total.toDouble(),
+                  ),
+                );
+            return StatisticsLineGraphWidget(spots: spots());
+          }
+        }),
       ],
     );
   }
