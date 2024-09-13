@@ -6,7 +6,6 @@ import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/loading_widget.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
-import 'package:money_tracker/screens/repositories/models/expanse_model.dart';
 import 'package:money_tracker/screens/statistics_layout/widgets/line_graph_widget.dart';
 import 'package:money_tracker/screens/statistics_layout/widgets/circular_graph_widget.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';

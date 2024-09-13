@@ -15,7 +15,7 @@ class MoneyTrackerApp extends StatelessWidget {
     return GetMaterialApp(
       getPages: pages(),
       title: English.appName.tr,
-      locale: Locale(Arabic.code),
+      locale: Locale(English.code),
       //initialRoute: Screens.test,
       initialBinding: AppBindings(),
       translations: AppLocalization(),

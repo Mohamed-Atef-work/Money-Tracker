@@ -17,49 +17,49 @@ class ExpenseComponent extends StatelessWidget {
     final height = context.height;
     return Card(
       color: kWhiteGray,
-      child: Row(
-        children: [
-          Padding(
-            padding: kHorizontalPadding5,
-            child: SvgPicture.asset(
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          children: [
+            SvgPicture.asset(
               Images.expanse,
               width: width * 0.15,
               height: height * 0.1,
             ),
-          ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomText(
-                fontSize: 18,
-                textColor: kDarkBrown,
-                fontWeight: FontWeight.bold,
-                text: model.money.toString(),
-              ),
-              SizedBox(height: height * 0.01),
-              CustomText(
-                fontSize: 15,
-                text: model.person,
-                textColor: kDarkBrown,
-              ),
-              SizedBox(height: height * 0.005),
-              CustomText(
-                fontSize: 15,
-                textColor: Colors.black,
-                text: model.spendingSide,
-              ),
-            ],
-          ),
-          SizedBox(width: width * 0.1),
-          Expanded(
-            child: CustomText(
-              textAlign: TextAlign.left,
-              textColor: Colors.black,
-              text: model.description,
+            const SizedBox(width: 8),
+            Column(
+              //mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomText(
+                  fontSize: 18,
+                  textColor: kDarkBrown,
+                  fontWeight: FontWeight.bold,
+                  text: model.money.toString(),
+                ),
+                SizedBox(height: height * 0.01),
+                CustomText(
+                  fontSize: 15,
+                  text: model.person,
+                  textColor: kDarkBrown,
+                ),
+                SizedBox(height: height * 0.005),
+                CustomText(
+                  fontSize: 15,
+                  textColor: Colors.black,
+                  text: model.spendingSide,
+                ),
+              ],
             ),
-          ),
-        ],
+            const SizedBox(width: 10),
+            Expanded(
+              child: CustomText(
+                textColor: Colors.black,
+                text: model.description,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

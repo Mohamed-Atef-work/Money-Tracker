@@ -5,7 +5,6 @@ import 'spending_side_statistics.dart';
 import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/app_bar.dart';
 import 'package:money_tracker/core/config/local/english.dart';
-import 'package:money_tracker/core/components/custom_text.dart';
 import 'package:money_tracker/screens/statistics_layout/controller.dart';
 import 'package:money_tracker/core/components/bottom_navigation_bar.dart';
 
