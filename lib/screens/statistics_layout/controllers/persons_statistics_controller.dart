@@ -16,9 +16,9 @@ class PersonsStatisticsController extends GetxController {
 
   RequestState dataState = RequestState.initial;
 
-  List<TotalModel> eachPersonOfMonth = [];
+  List<TotalModel> eachPersonTotalOfTheMonth = [];
   List<TotalModel> personTotalEachMonth = [];
-  List<TotalModel> eachSideOfPersonOfMonth = [];
+  List<TotalModel> eachSideOfPersonOfTheMonth = [];
 
   Future<void> _personTotalEachMonth() async {
     final person = personsSides.persons[personsSides.selectedPerson];
@@ -33,8 +33,8 @@ class PersonsStatisticsController extends GetxController {
     final ids = personsSides.persons
         .map((person) => monthPerson(month, person))
         .toList();
-    eachPersonOfMonth = await _repo.getTotalsWithIds(ids);
-    eachPersonOfMonth.map((e) => print(e.toString())).toList();
+    eachPersonTotalOfTheMonth = await _repo.getTotalsWithIds(ids);
+    eachPersonTotalOfTheMonth.map((e) => print(e.toString())).toList();
   }
 
   Future<void> _eachSideTotalOfPersonOfMonth() async {
@@ -43,8 +43,8 @@ class PersonsStatisticsController extends GetxController {
     final ids = personsSides.sides
         .map((side) => monthPersonSide(month, person, side))
         .toList();
-    eachSideOfPersonOfMonth = await _repo.getTotalsWithIds(ids);
-    eachSideOfPersonOfMonth.map((e) => print(e.toString())).toList();
+    eachSideOfPersonOfTheMonth = await _repo.getTotalsWithIds(ids);
+    eachSideOfPersonOfTheMonth.map((e) => print(e.toString())).toList();
   }
 
   void getData() async {
