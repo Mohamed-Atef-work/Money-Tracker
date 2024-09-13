@@ -47,15 +47,8 @@ class PersonsStatisticsView extends StatelessWidget {
           if (controller.dataState == RequestState.loading) {
             return const LoadingWidget();
           } else {
-            List<FlSpot> spots() => List.generate(
-                  controller.personTotalEachMonth.length,
-                  (index) => FlSpot(
-                    index.toDouble(),
-                    controller.personTotalEachMonth[index].total.toDouble(),
-                  ),
-                );
             return StatisticsLineGraphWidget(
-              spots: spots(),
+              totals: controller.personTotalEachMonth,
               leftTitle: personsSides.persons[personsSides.selectedPerson],
             );
           }

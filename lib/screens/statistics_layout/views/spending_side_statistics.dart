@@ -47,15 +47,8 @@ class SpendingSidesStatisticsView extends StatelessWidget {
           } else if (controller.sideEachMonth.isEmpty) {
             return Text("NoData");
           } else {
-            List<FlSpot> spots() => List.generate(
-                  controller.sideEachMonth.length,
-                  (index) => FlSpot(
-                    index.toDouble(),
-                    controller.sideEachMonth[index].total.toDouble(),
-                  ),
-                );
             return StatisticsLineGraphWidget(
-              spots: spots(),
+              totals: controller.sideEachMonth,
               leftTitle: personSide.sides[personSide.selectedSide],
             );
           }
