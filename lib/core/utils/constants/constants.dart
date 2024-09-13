@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const kHorizontal10Vertical5 =
     EdgeInsets.symmetric(horizontal: 10, vertical: 5);
 const kHorizontalPadding5 = EdgeInsets.symmetric(horizontal: 5);
+const kHorizontalPadding8 = EdgeInsets.symmetric(horizontal: 8);
 const kHorizontalPadding10 = EdgeInsets.symmetric(horizontal: 10);
 const kDuration1Second = Duration(seconds: 1);
 const kPrimaryColorYellow = Color(0xFFffbd29);

@@ -13,13 +13,13 @@ class MoneyTrackerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: kPrimaryColorYellow),
       getPages: pages(),
-      title: English.appName,
-      locale: Locale(English.code),
+      title: English.appName.tr,
+      locale: Locale(Arabic.code),
       //initialRoute: Screens.test,
       initialBinding: AppBindings(),
       translations: AppLocalization(),
+      theme: ThemeData(scaffoldBackgroundColor: kPrimaryColorYellow),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
+import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/screens/repositories/models/totals_model.dart';
@@ -59,7 +60,7 @@ class SpendingSidesStatisticsController extends GetxController {
       await _selectedSideTotalOfEachMonths();
 
       dataState = RequestState.success;
-      update();
+      delayedUpdate();
     } on LocalDataBaseException catch (exc) {
       dataState = RequestState.error;
       update();

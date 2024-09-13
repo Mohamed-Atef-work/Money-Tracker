@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:money_tracker/core/components/scrollable_row_component.dart';
-
-import 'package:money_tracker/core/components/expenses_component.dart';
-
 import 'screens/repositories/models/expanse_model.dart';
+import 'package:money_tracker/core/components/scrollable_row_component.dart';
 
 class TestScreen extends StatelessWidget {
   const TestScreen({super.key});
@@ -20,7 +17,11 @@ class TestScreen extends StatelessWidget {
     );
     return Scaffold(
       body: Center(
-        child: ScrollableRowItemComponent(onTap: () {  }, title: 'fgh', isChosen: false,),
+        child: ScrollableRowItemComponent(
+          onTap: () {},
+          title: 'fgh',
+          isChosen: false,
+        ),
       ),
     );
   }

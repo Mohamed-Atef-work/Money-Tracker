@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:money_tracker/core/components/app_bar.dart';
-import 'package:money_tracker/core/components/bottom_navigation_bar.dart';
+import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/screens/data_layout/views/month_data.dart';
 import 'package:money_tracker/screens/data_layout/views/person_data.dart';
+import 'package:money_tracker/core/components/bottom_navigation_bar.dart';
 import 'package:money_tracker/screens/data_layout/views/spending_side_data.dart';
 import 'package:money_tracker/screens/data_layout/controllers/data_layout_controller.dart';
 
@@ -16,8 +17,11 @@ class DataLayoutScreen extends StatelessWidget {
     return GetBuilder<DataLayoutController>(
       builder: (_) {
         return Scaffold(
-          appBar: CustomAppBar(title: controller.titles[controller.index]),
-          body: _body(controller.index),
+          appBar: CustomAppBar(title: controller.titles[controller.index].tr),
+          body: Padding(
+            padding: kHorizontalPadding8,
+            child: _body(controller.index),
+          ),
           bottomNavigationBar: AppBottomNav(
             index: controller.index,
             onTap: (index) => controller.currentIndex(index),

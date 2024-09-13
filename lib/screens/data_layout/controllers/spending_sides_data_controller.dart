@@ -11,6 +11,8 @@ class SpendingSidesDataController extends GetxController {
 
   SpendingSidesDataController(this._repo);
 
+  final personsSides = Get.find<PersonsSidesController>();
+
   List<ExpanseModel> expanses = [];
 
   void getExpanses() async {
@@ -28,7 +30,6 @@ class SpendingSidesDataController extends GetxController {
   }
 
   GetExpansesParams _params() {
-    final personsSides = Get.find<PersonsSidesController>();
     final spendingSide = personsSides.sides[personsSides.selectedSide];
     final month = English.monthsList[personsSides.selectedMonth];
     final params = GetExpansesParams(

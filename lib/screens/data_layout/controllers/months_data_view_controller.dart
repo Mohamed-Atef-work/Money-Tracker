@@ -3,7 +3,6 @@ import 'package:money_tracker/core/error/exceptions.dart';
 import 'package:money_tracker/screens/repositories/data_repo/data_repo.dart';
 import 'package:money_tracker/screens/repositories/models/expanse_model.dart';
 
-
 class MonthsDataController extends GetxController {
   final DataRepo _repo;
   MonthsDataController(this._repo);

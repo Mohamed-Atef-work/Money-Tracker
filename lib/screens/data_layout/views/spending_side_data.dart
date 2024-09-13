@@ -37,6 +37,7 @@ class SpendingSidesDataView extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(height: 10),
         GetBuilder<SpendingSidesDataController>(
           builder: (controller) {
             if (controller.expanses.isEmpty) {

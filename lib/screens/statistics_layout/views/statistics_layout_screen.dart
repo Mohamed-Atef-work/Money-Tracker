@@ -18,7 +18,7 @@ class StatisticsLayoutScreen extends StatelessWidget {
 
     return GetBuilder<StatisticsLayoutController>(
       builder: (controller) => Scaffold(
-        appBar: CustomAppBar(title: English.statistics),
+        appBar: CustomAppBar(title: English.statistics.tr),
         body: _body(controller.index),
         bottomNavigationBar: AppBottomNav(
           index: controller.index,

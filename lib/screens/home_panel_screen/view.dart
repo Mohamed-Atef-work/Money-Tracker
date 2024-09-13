@@ -14,50 +14,54 @@ class HomePanelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          CustomButton(
-            text: English.addExpanse.tr,
-            onPressed: () => Get.toNamed(Routes.addExpanse),
-          ),
-          CustomButton(
-            text: English.data.tr,
-            onPressed: () => Get.toNamed(Routes.dataLayout),
-          ),
-          CustomButton(
-            text: English.statistics.tr,
-            onPressed: () => Get.toNamed(Routes.statisticsLayout),
-          ),
-          CustomButton(
-            text: "test",
-            onPressed: () async {
-              final sqlServices = SqfliteServices();
-              final repo = StatisticsRepoImpl(sqlServices);
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
 
-              final response = await repo.getTotalsWithIds(English.monthsList);
-              response.map((e) => print(e.toString())).toList();
-
-              /*final params = GetTotalWithIdsParams(
-                person: 'mo',
-                month: 'January',
-                side: 'Football',
-              );
-              final response = await repo.getTotalsWithIds(params);
-              response.map((e) => print(e.toString())).toList();*/
-              /*final response = await sqlServices.getItemsWithValue(
-                tableName: kTotals,
-                columnsNames: [kId],
-                values: ["JanuaryFootball"],
-              );*/
-              //response.map((e) => print(e)).toList();
-              //print(response.map((e) => print(e)));
-            },
-          ),
-        ],
+            CustomButton(
+              text: English.addExpanse.tr,
+              onPressed: () => Get.toNamed(Routes.addExpanse),
+            ),
+            CustomButton(
+              text: English.data.tr,
+              onPressed: () => Get.toNamed(Routes.dataLayout),
+            ),
+            CustomButton(
+              text: English.statistics.tr,
+              onPressed: () => Get.toNamed(Routes.statisticsLayout),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+/*CustomButton(
+              text: "test",
+              onPressed: () async {
+                final sqlServices = SqfliteServices();
+                final repo = StatisticsRepoImpl(sqlServices);
+
+                final response =
+                    await repo.getTotalsWithIds(English.monthsList);
+                response.map((e) => print(e.toString())).toList();
+
+                */ /*final params = GetTotalWithIdsParams(
+                  person: 'mo',
+                  month: 'January',
+                  side: 'Football',
+                );
+                final response = await repo.getTotalsWithIds(params);
+                response.map((e) => print(e.toString())).toList();*/ /*
+                */ /*final response = await sqlServices.getItemsWithValue(
+                  tableName: kTotals,
+                  columnsNames: [kId],
+                  values: ["JanuaryFootball"],
+                );*/ /*
+                //response.map((e) => print(e)).toList();
+                //print(response.map((e) => print(e)));
+              },
+            ),*/

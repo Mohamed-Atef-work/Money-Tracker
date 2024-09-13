@@ -7,7 +7,6 @@ import 'package:money_tracker/core/components/messenger_component.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
 import 'package:money_tracker/screens/data_layout/controllers/persons_data_controller.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
-import 'package:money_tracker/screens/repositories/models/expanse_model.dart';
 
 class PersonsDataView extends StatelessWidget {
   const PersonsDataView({super.key});
@@ -39,6 +38,8 @@ class PersonsDataView extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(height: 10),
+
         GetBuilder<PersonsDataController>(
           builder: (controller) {
             if (controller.expanses.isEmpty) {
@@ -53,23 +54,3 @@ class PersonsDataView extends StatelessWidget {
   }
 }
 
-final model = ExpanseModel(
-  money: 30,
-  month: "january",
-  person: "Mohamed",
-  spendingSide: "Shopping",
-  description:
-      "When i was shopping i bought a coat and a lot of kilos of mango,then i went to the library and bought some book,then i went to the library and bought some book,then i went to the library and bought some book",
-);
-
-final expanses = [
-  model,
-  model,
-  model,
-  model,
-  model,
-  model,
-  model,
-  model,
-  model,
-];

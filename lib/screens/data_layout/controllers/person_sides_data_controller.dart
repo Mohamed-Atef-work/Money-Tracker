@@ -55,7 +55,7 @@ class PersonsSidesController extends GetxController {
 
       final model = PersonModel(person: sideOrPersonCon.text);
       try {
-        final models = await _repo.addPerson(model);
+        await _repo.addPerson(model);
         persons.add(sideOrPersonCon.text);
         sideOrPersonCon.text = '';
         addPersonOrSideState = RequestState.success;
@@ -73,7 +73,7 @@ class PersonsSidesController extends GetxController {
       update();
       final model = SpendingSideModel(spendingSide: sideOrPersonCon.text);
       try {
-        final models = await _repo.addSpendingSide(model);
+        await _repo.addSpendingSide(model);
         sides.add(sideOrPersonCon.text);
         sideOrPersonCon.text = '';
         addPersonOrSideState = RequestState.success;

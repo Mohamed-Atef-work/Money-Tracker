@@ -20,14 +20,18 @@ class AddExpanseController extends GetxController {
   final moneyCon = TextEditingController();
   final descriptionCon = TextEditingController();
 
+  final personsSidesCon = Get.find<PersonsSidesController>();
+
   void addExpanses() async {
     if (formKey.currentState!.validate()) {
       expanseState = RequestState.loading;
       update();
-      final expanse = _expanseModel();
+
       try {
+        final expanse = _expanseModel();
         await _addExpanse.call(expanse);
         expanseState = RequestState.success;
+
         await delayedUpdate();
         moneyCon.text = "";
         descriptionCon.text = "";
@@ -39,7 +43,6 @@ class AddExpanseController extends GetxController {
   }
 
   ExpanseModel _expanseModel() {
-    final personsSidesCon = Get.find<PersonsSidesController>();
     final model = ExpanseModel(
       money: int.parse(moneyCon.text),
       description: descriptionCon.text,

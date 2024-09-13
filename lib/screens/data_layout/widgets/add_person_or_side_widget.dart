@@ -1,12 +1,11 @@
-import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:money_tracker/core/components/loading_widget.dart';
+import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
+import 'package:money_tracker/core/components/loading_widget.dart';
 import 'package:money_tracker/core/components/custom_text_form_field.dart';
 import 'package:money_tracker/core/components/base_model_sheet_component.dart';
-import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
 
 class AddPersonOrSideWidget extends StatelessWidget {
