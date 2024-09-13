@@ -1,14 +1,15 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:money_tracker/core/components/loading_widget.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
+import 'package:money_tracker/core/components/loading_widget.dart';
 import 'package:money_tracker/core/components/drop_down_menu_component.dart';
-import 'package:money_tracker/core/utils/enums.dart';
+import 'package:money_tracker/screens/statistics_layout/widgets/line_graph_widget.dart';
+import 'package:money_tracker/screens/statistics_layout/widgets/circular_graph_widget.dart';
 import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
 import 'package:money_tracker/screens/statistics_layout/controllers/spending_sides_statistics_controller.dart';
-import 'package:money_tracker/screens/statistics_layout/widgets/line_graph_widget.dart';
 
 class SpendingSidesStatisticsView extends StatelessWidget {
   const SpendingSidesStatisticsView({super.key});
@@ -40,19 +41,33 @@ class SpendingSidesStatisticsView extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 10),
-        GetBuilder<SpendingSidesStatisticsController>(builder: (controller) {
-          if (controller.dataState == RequestState.loading) {
-            return const LoadingWidget();
-          } else if (controller.sideEachMonth.isEmpty) {
-            return Text("NoData");
-          } else {
-            return StatisticsLineGraphWidget(
-              totals: controller.sideEachMonth,
-              leftTitle: personSide.sides[personSide.selectedSide],
-            );
-          }
-        }),
+        Expanded(
+          child: GetBuilder<SpendingSidesStatisticsController>(
+            builder: (controller) {
+              if (controller.dataState == RequestState.loading) {
+                return const LoadingWidget();
+              } else {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    StatisticsLineGraphWidget(
+                      totals: controller.sideEachMonth,
+                      leftTitle: personSide.sides[personSide.selectedSide],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CircularGraphWidget(totals: controller.eachSideOfMonth),
+                        CircularGraphWidget(
+                            totals: controller.eachPersonTotalOfSideInMonth),
+                      ],
+                    )
+                  ],
+                );
+              }
+            },
+          ),
+        ),
       ],
     );
   }
