@@ -5,8 +5,13 @@ import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/screens/repositories/models/totals_model.dart';
 
 class CircularGraphWidget extends StatelessWidget {
+  final String title;
   final List<TotalModel> totals;
-  const CircularGraphWidget({super.key, required this.totals});
+  const CircularGraphWidget({
+    super.key,
+    required this.title,
+    required this.totals,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +28,20 @@ class CircularGraphWidget extends StatelessWidget {
     return SizedBox(
       width: context.width * 0.4,
       height: context.height * 0.3,
-      child: PieChart(
-        swapAnimationCurve: Curves.bounceIn,
-        swapAnimationDuration: kDuration1Second,
-        PieChartData(
-          sections: sections,
-          centerSpaceRadius: 10,
-        ),
+      child: Column(
+        children: [
+          Expanded(
+            child: PieChart(
+              swapAnimationCurve: Curves.linear,
+              swapAnimationDuration: kDuration1Second,
+              PieChartData(
+                sections: sections,
+                centerSpaceRadius: 10,
+              ),
+            ),
+          ),
+          Text(title),
+        ],
       ),
     );
   }

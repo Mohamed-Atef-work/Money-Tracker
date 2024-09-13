@@ -35,6 +35,14 @@ class English {
   static String thereIsNoData = "There Is No Data";
   static String addSpendingSide = "Add Spending Side";
 
+  static String eachSpendingSideTotalOfThisMonth =
+      "Each Spending Side Total Of This Month";
+  static String eachSpendingSideTotalOfThisPersonInThisMonth =
+      "Each Spending Side Total Of This Person In This Month";
+  static String eachPersonTotalOfThisSpendingSideInThisMonth =
+      "Each Person Total Of This Spending Side In This Month";
+  static String eachPersonTotalOfThisMonth = "Each Person Total Of This Month";
+
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";
   static String unknownDatabaseError = "Unknown database error:";
@@ -98,5 +106,11 @@ class English {
         failedToOpenTheDatabase: failedToOpenTheDatabase,
         databaseIsInReadOnlyMode: databaseIsInReadOnlyMode,
         uniqueConstraintViolation: uniqueConstraintViolation,
+        eachPersonTotalOfThisSpendingSideInThisMonth:
+            eachPersonTotalOfThisSpendingSideInThisMonth,
+        eachPersonTotalOfThisMonth: eachPersonTotalOfThisMonth,
+        eachSpendingSideTotalOfThisPersonInThisMonth:
+            eachSpendingSideTotalOfThisPersonInThisMonth,
+        eachSpendingSideTotalOfThisMonth: eachSpendingSideTotalOfThisMonth,
       };
 }

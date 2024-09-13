@@ -60,9 +60,14 @@ class PersonsStatisticsView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CircularGraphWidget(
-                          totals: controller.eachPersonTotalOfTheMonth),
+                        title: English.eachPersonTotalOfThisMonth.tr,
+                        totals: controller.eachPersonTotalOfTheMonth,
+                      ),
                       CircularGraphWidget(
-                          totals: controller.eachSideOfPersonOfTheMonth),
+                        totals: controller.eachSideOfPersonOfTheMonth,
+                        title:
+                            English.eachSpendingSideTotalOfThisPersonInThisMonth.tr,
+                      ),
                     ],
                   ),
                 ],
@@ -74,24 +79,3 @@ class PersonsStatisticsView extends StatelessWidget {
     );
   }
 }
-
-final model = ExpanseModel(
-  money: 30,
-  month: "january",
-  person: "Mohamed",
-  spendingSide: "Shopping",
-  description:
-      "When i was shopping i bought a coat and a lot of kilos of mango,then i went to the library and bought some book,then i went to the library and bought some book,then i went to the library and bought some book",
-);
-
-final expanses = [
-  model,
-  model,
-  model,
-  model,
-  model,
-  model,
-  model,
-  model,
-  model,
-];

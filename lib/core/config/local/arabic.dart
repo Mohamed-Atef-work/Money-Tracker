@@ -37,6 +37,14 @@ class Arabic {
   static String february = "فبراير";
   static String september = "سبتمبر";
 
+  static String eachSpendingSideTotalOfThisMonth =
+      "مجموع كل وجه إنفاق في هذا الشهر";
+  static String eachSpendingSideTotalOfThisPersonInThisMonth =
+      "مجموع كل وجه إنفاق لهذا الشخص في هذا الشهر";
+  static String eachPersonTotalOfThisSpendingSideInThisMonth =
+      "مجموع كل شخص في وجه الإنفاق هذا في هذا الشهر";
+  static String eachPersonTotalOfThisMonth = "مجموع كل شخص في هذا الشهر";
+
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";
   static String unknownDatabaseError = "Unknown database error:";
@@ -85,5 +93,12 @@ class Arabic {
         English.failedToOpenTheDatabase: failedToOpenTheDatabase,
         English.databaseIsInReadOnlyMode: databaseIsInReadOnlyMode,
         English.uniqueConstraintViolation: uniqueConstraintViolation,
+        English.eachPersonTotalOfThisMonth: eachPersonTotalOfThisMonth,
+        English.eachPersonTotalOfThisSpendingSideInThisMonth:
+            eachPersonTotalOfThisSpendingSideInThisMonth,
+        English.eachSpendingSideTotalOfThisPersonInThisMonth:
+            eachSpendingSideTotalOfThisPersonInThisMonth,
+        English.eachSpendingSideTotalOfThisMonth:
+            eachSpendingSideTotalOfThisMonth,
       };
 }

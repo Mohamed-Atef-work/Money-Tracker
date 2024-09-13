@@ -57,9 +57,15 @@ class SpendingSidesStatisticsView extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CircularGraphWidget(totals: controller.eachSideOfMonth),
                         CircularGraphWidget(
-                            totals: controller.eachPersonTotalOfSideInMonth),
+                          totals: controller.eachSideOfMonth,
+                          title: English.eachSpendingSideTotalOfThisMonth.tr,
+                        ),
+                        CircularGraphWidget(
+                          totals: controller.eachPersonTotalOfSideInMonth,
+                          title: English
+                              .eachPersonTotalOfThisSpendingSideInThisMonth.tr,
+                        ),
                       ],
                     )
                   ],
