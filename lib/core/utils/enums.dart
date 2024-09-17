@@ -5,18 +5,8 @@ enum RequestState {
   error,
 }
 
-enum AdminUser {
-  admin,
-  user,
-}
-
-enum PickedImageState {
-  changed,
-  noImage,
-}
-
-enum ImageState {
-  noImage,
-  network,
-  local,
+enum MonthPersonSide {
+  side,
+  month,
+  person,
 }

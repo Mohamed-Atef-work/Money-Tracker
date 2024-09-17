@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/screens/repositories/models/totals_model.dart';
@@ -7,10 +8,12 @@ import 'package:money_tracker/screens/repositories/models/totals_model.dart';
 class CircularGraphWidget extends StatelessWidget {
   final String title;
   final List<TotalModel> totals;
+  final MonthPersonSide monthPersonSide;
   const CircularGraphWidget({
     super.key,
     required this.title,
     required this.totals,
+    required this.monthPersonSide,
   });
 
   @override
@@ -20,8 +23,8 @@ class CircularGraphWidget extends StatelessWidget {
       (index) => PieChartSectionData(
         radius: 70,
         showTitle: true,
-        title: totals[index].id,
         value: totals[index].total.toDouble(),
+        title: _title(monthPersonSide, totals[index]),
         titleStyle: const TextStyle(fontSize: 13, color: Colors.white),
       ),
     );
@@ -34,10 +37,7 @@ class CircularGraphWidget extends StatelessWidget {
             child: PieChart(
               swapAnimationCurve: Curves.linear,
               swapAnimationDuration: kDuration1Second,
-              PieChartData(
-                sections: sections,
-                centerSpaceRadius: 10,
-              ),
+              PieChartData(sections: sections, centerSpaceRadius: 10),
             ),
           ),
           Text(title),
@@ -45,15 +45,15 @@ class CircularGraphWidget extends StatelessWidget {
       ),
     );
   }
-}
 
-List<Color> colorsss = [
-  Colors.yellow,
-  Colors.brown,
-  Colors.blue,
-  Colors.amber,
-  Colors.red,
-  Colors.blue,
-  Colors.amber,
-  Colors.red,
-];
+  String _title(MonthPersonSide monthPersonSide, TotalModel model) {
+    switch (monthPersonSide) {
+      case MonthPersonSide.side:
+        return model.id;
+      case MonthPersonSide.month:
+        return model.month;
+      case MonthPersonSide.person:
+        return model.person;
+    }
+  }
+}

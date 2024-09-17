@@ -17,8 +17,8 @@ class PersonsStatisticsController extends GetxController {
 
   RequestState dataState = RequestState.initial;
 
-  List<TotalModel> eachPersonTotalOfTheMonth = [];
   List<TotalModel> personTotalEachMonth = [];
+  List<TotalModel> eachPersonTotalOfTheMonth = [];
   List<TotalModel> eachSideOfPersonOfTheMonth = [];
 
   Future<void> _personTotalEachMonth() async {
