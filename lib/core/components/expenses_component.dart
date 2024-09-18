@@ -28,7 +28,6 @@ class ExpenseComponent extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Column(
-              //mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CustomText(

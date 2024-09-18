@@ -59,21 +59,21 @@ class StatisticsRepoImpl implements StatisticsRepo {
       throw exception;
     } catch (exc) {
       final exception = LocalDataBaseException(exc.toString());
+      print("error is -------->$exc");
       throw exception;
     }
   }
 
   Future<List<TotalModel>> _getTotalsBeforeAddingExpanse(
       GetTotalWithIdsParams params) async {
-    final month = await _getOneTotalForExpanse(params.month, kMonth);
-    final monthSide =
-        await _getOneTotalForExpanse(params.monthSideId, kMonthSide);
-    final monthPerson =
-        await _getOneTotalForExpanse(params.monthPersonId, kMonthPerson);
-    final monthPersonSide = await _getOneTotalForExpanse(
-        params.monthPersonSideId, kMonthPersonSide);
-    final models = [month, monthSide, monthPerson, monthPersonSide];
-    return models;
+    final result = await Future.wait([
+      _getOneTotalForExpanse(params.month, kMonth),
+      _getOneTotalForExpanse(params.monthSideId, kMonthSide),
+      _getOneTotalForExpanse(params.monthPersonId, kMonthPerson),
+      _getOneTotalForExpanse(params.monthPersonSideId, kMonthPersonSide),
+    ]);
+
+    return result;
   }
 
   Future<TotalModel> _getOneTotalForExpanse(String id, String idName) async {
@@ -113,9 +113,7 @@ class StatisticsRepoImpl implements StatisticsRepo {
     TotalModel model;
     for (String id in ids) {
       model = await _getOneTotal(id);
-      //if (model != null) {
       models.add(model);
-      //}
     }
     return models;
   }

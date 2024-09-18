@@ -24,20 +24,19 @@ class AddExpanseController extends GetxController {
 
   void addExpanses() async {
     if (formKey.currentState!.validate()) {
-      expanseState = RequestState.loading;
-      update();
-
       try {
+        expanseState = RequestState.loading;
+        update();
+
         final expanse = _expanseModel();
         await _addExpanse.call(expanse);
-        expanseState = RequestState.success;
 
+        expanseState = RequestState.success;
         await delayedUpdate();
-        moneyCon.text = "";
-        descriptionCon.text = "";
       } on LocalDataBaseException catch (exc) {
+        print(exc.message);
         expanseState = RequestState.error;
-        update();
+        delayedUpdate();
       }
     }
   }

@@ -16,13 +16,6 @@ class StatisticsLineGraphWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<FlSpot> spots() => List.generate(
-      totals.length,
-          (index) => FlSpot(
-        index.toDouble(),
-        totals[index].total.toDouble(),
-      ),
-    );
     return Container(
       height: context.height * 0.4,
       padding: const EdgeInsets.all(10),
@@ -34,7 +27,7 @@ class StatisticsLineGraphWidget extends StatelessWidget {
             LineChartBarData(
               barWidth: 2,
               //colors: [kDarkBrown],
-              spots: spots(),
+              spots: _spots(),
             ),
           ],
           titlesData: FlTitlesData(
@@ -50,15 +43,23 @@ class StatisticsLineGraphWidget extends StatelessWidget {
             leftTitle: AxisTitle(
                 titleText: "${English.total.tr} (${leftTitle.tr})",
                 showTitle: true),
-            bottomTitle: AxisTitle(
+            /*bottomTitle: AxisTitle(
               showTitle: true,
               titleText: English.month.tr,
-            ),
+            ),*/
           ),
         ),
       ),
     );
   }
+
+  List<FlSpot> _spots() => List.generate(
+        totals.length,
+        (index) => FlSpot(
+          index.toDouble(),
+          totals[index].total.toDouble(),
+        ),
+      );
 
   String _getBottomTitles(double value) {
     final month = English.monthsList[value.toInt()].tr;

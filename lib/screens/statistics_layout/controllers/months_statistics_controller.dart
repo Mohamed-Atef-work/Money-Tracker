@@ -16,8 +16,8 @@ class MonthsStatisticsController extends GetxController {
 
   RequestState dataState = RequestState.initial;
 
-  List<TotalModel> eachMonthTotal = [];
   List<TotalModel> eachSideTotal = [];
+  List<TotalModel> eachMonthTotal = [];
   List<TotalModel> eachPersonTotal = [];
 
   Future<void> _eachMonthTotal() async {
@@ -36,7 +36,7 @@ class MonthsStatisticsController extends GetxController {
   Future<void> _eachPersonTotalOfMonth() async {
     final month = English.monthsList[personsSides.selectedMonth];
     final ids = personsSides.persons
-        .map((persons) => monthPerson(month, persons))
+        .map((person) => monthPerson(month, person))
         .toList();
     eachPersonTotal = await _repo.getTotalsWithIds(ids);
     eachPersonTotal.map((e) => print(e.toString())).toList();
@@ -48,8 +48,8 @@ class MonthsStatisticsController extends GetxController {
       update();
 
       await _eachMonthTotal();
-      await _eachPersonTotalOfMonth();
       await eachSideTotalOfMonth();
+      await _eachPersonTotalOfMonth();
 
       dataState = RequestState.success;
       delayedUpdate();

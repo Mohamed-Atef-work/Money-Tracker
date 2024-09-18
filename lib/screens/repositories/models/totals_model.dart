@@ -14,10 +14,12 @@ class TotalModel {
     required this.total,
     required this.idName,
   }) {
-    final List<String> strings = id.split("_");
-    month = strings[0];
-    person = strings[1];
-    spendingSide = strings[2];
+    final List<String> parts = id.split("0");
+    if (parts.length == 3) {
+      month = parts[0];
+      person = parts[1];
+      spendingSide = parts[2];
+    }
   }
 
   factory TotalModel.fromJson(Map<String, dynamic> json) => TotalModel(

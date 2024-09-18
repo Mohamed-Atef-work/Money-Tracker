@@ -25,8 +25,8 @@ class AddExpanseScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: English.addExpanse),
       body: ListView(
-        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(10),
+        physics: const BouncingScrollPhysics(),
         children: [
           SvgPicture.asset(
             Images.expanse,

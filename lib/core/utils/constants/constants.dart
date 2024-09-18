@@ -27,10 +27,11 @@ const String kDescription = "Description";
 const String kSpendingSide = "SpendingSide";
 const String kSpendingSides = "SpendingSides";
 const String kMonthPersonSide = "MonthPersonSide";
-String monthSide(String month, String side) => "${month}_P_$side";
-String monthPerson(String month, String person) => "${month}_${person}_S";
+
+String monthSide(String month, String side) => "${month}0P0$side";
+String monthPerson(String month, String person) => "${month}0${person}0S";
 String monthPersonSide(String month, String person, String side) =>
-    "${month}_${person}_$side";
+    "${month}0${person}0$side";
 
 const String kMay = "May";
 const String kJune = "June";

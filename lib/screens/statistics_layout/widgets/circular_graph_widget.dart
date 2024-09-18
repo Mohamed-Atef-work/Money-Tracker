@@ -18,16 +18,6 @@ class CircularGraphWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sections = List.generate(
-      totals.length,
-      (index) => PieChartSectionData(
-        radius: 70,
-        showTitle: true,
-        value: totals[index].total.toDouble(),
-        title: _title(monthPersonSide, totals[index]),
-        titleStyle: const TextStyle(fontSize: 13, color: Colors.white),
-      ),
-    );
     return SizedBox(
       width: context.width * 0.4,
       height: context.height * 0.3,
@@ -37,7 +27,7 @@ class CircularGraphWidget extends StatelessWidget {
             child: PieChart(
               swapAnimationCurve: Curves.linear,
               swapAnimationDuration: kDuration1Second,
-              PieChartData(sections: sections, centerSpaceRadius: 10),
+              PieChartData(sections: _sections(), centerSpaceRadius: 10),
             ),
           ),
           Text(title),
@@ -46,10 +36,22 @@ class CircularGraphWidget extends StatelessWidget {
     );
   }
 
+  List<PieChartSectionData>? _sections() => List.generate(
+        totals.length,
+        (index) => PieChartSectionData(
+          radius: 70,
+          showTitle: true,
+          value: totals[index].total.toDouble(),
+          title:
+              "${_title(monthPersonSide, totals[index])} \$${totals[index].total}",
+          titleStyle: const TextStyle(fontSize: 13, color: Colors.white),
+        ),
+      );
+
   String _title(MonthPersonSide monthPersonSide, TotalModel model) {
     switch (monthPersonSide) {
       case MonthPersonSide.side:
-        return model.id;
+        return model.spendingSide;
       case MonthPersonSide.month:
         return model.month;
       case MonthPersonSide.person:

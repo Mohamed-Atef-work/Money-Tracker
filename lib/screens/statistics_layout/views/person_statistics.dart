@@ -59,16 +59,17 @@ class PersonsStatisticsView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CircularGraphWidget(
-                        monthPersonSide: MonthPersonSide.person,
-                        title: English.eachPersonTotalOfThisMonth.tr,
-                        totals: controller.eachPersonTotalOfTheMonth,
-                      ),
-                      CircularGraphWidget(
                         monthPersonSide: MonthPersonSide.side,
                         totals: controller.eachSideOfPersonOfTheMonth,
                         title: English
                             .eachSpendingSideTotalOfThisPersonInThisMonth.tr,
                       ),
+                      CircularGraphWidget(
+                        monthPersonSide: MonthPersonSide.person,
+                        title: English.eachPersonTotalOfThisMonth.tr,
+                        totals: controller.eachPersonTotalOfTheMonth,
+                      ),
+
                     ],
                   ),
                 ],
