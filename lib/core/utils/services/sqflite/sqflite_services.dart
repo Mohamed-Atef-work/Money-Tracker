@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/core/utils/services/sqflite/db_constants.dart';
 
@@ -93,159 +94,11 @@ class SqfliteServices {
   }
 
   void _createTables(Batch batch) {
-    batch.execute(
-      '''$kCreateTable $kJanuary
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kFebruary
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kMars
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kApril
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kMay
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kJune
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kJuly
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kAugust
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kSeptember
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kOctober
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kNovember
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kDecember
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText,
-      $kMonth $kText,
-      $kMoney $kInteger,
-      $kDescription $kText,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kPersons
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kPerson $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kSpendingSides
-      (
-      $kId $kInteger $kPrimary $kKey,
-      $kSpendingSide $kText
-      )''',
-    );
-    batch.execute(
-      '''$kCreateTable $kTotals
-      (
-      $kId $kText $kPrimary $kKey,
-      $kIdName $kText,
-      $kTotal $kText
-      )''',
-    );
+    for (String month in English.monthsList) {
+      batch.execute(kMonthTable(month));
+    }
+    batch.execute(kTotalsTable);
+    batch.execute(kPersonsTable);
+    batch.execute(kSpendingSidesTable);
   }
 }
