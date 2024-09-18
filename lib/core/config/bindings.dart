@@ -1,18 +1,17 @@
 import 'package:get/get.dart';
-import 'package:money_tracker/screens/statistics_layout/controller.dart';
+import 'package:money_tracker/screens/layout/controller.dart';
+import 'package:money_tracker/screens/add_expanse_screen/controller.dart';
 import 'package:money_tracker/core/utils/services/sqflite/sqflite_services.dart';
 import 'package:money_tracker/screens/repositories/data_repo/data_repo_impl.dart';
-import 'package:money_tracker/screens/data_layout/use_cases/add_expanse_use_case.dart';
-import 'package:money_tracker/screens/data_layout/controllers/add_expanse_controller.dart';
-import 'package:money_tracker/screens/data_layout/controllers/data_layout_controller.dart';
-import 'package:money_tracker/screens/data_layout/controllers/persons_data_controller.dart';
+import 'package:money_tracker/screens/data_module/controllers/months_data_controller.dart';
+import 'package:money_tracker/screens/data_module/controllers/persons_data_controller.dart';
 import 'package:money_tracker/screens/repositories/statistics_repo/statistics_repo_impl.dart';
-import 'package:money_tracker/screens/data_layout/controllers/months_data_view_controller.dart';
-import 'package:money_tracker/screens/data_layout/controllers/person_sides_data_controller.dart';
-import 'package:money_tracker/screens/data_layout/controllers/spending_sides_data_controller.dart';
-import 'package:money_tracker/screens/statistics_layout/controllers/months_statistics_controller.dart';
-import 'package:money_tracker/screens/statistics_layout/controllers/persons_statistics_controller.dart';
-import 'package:money_tracker/screens/statistics_layout/controllers/spending_sides_statistics_controller.dart';
+import 'package:money_tracker/screens/add_expanse_screen/use_cases/add_expanse_use_case.dart';
+import 'package:money_tracker/screens/data_module/controllers/person_sides_data_controller.dart';
+import 'package:money_tracker/screens/data_module/controllers/spending_sides_data_controller.dart';
+import 'package:money_tracker/screens/statistics_module/controllers/months_statistics_controller.dart';
+import 'package:money_tracker/screens/statistics_module/controllers/persons_statistics_controller.dart';
+import 'package:money_tracker/screens/statistics_module/controllers/spending_sides_statistics_controller.dart';
 
 class AppBindings extends Bindings {
   @override
@@ -26,8 +25,7 @@ class AppBindings extends Bindings {
     final addExpanse =
         Get.put(AddExpanseUseCase(dataRepo, statRepo), permanent: true);
 
-    Get.put(DataLayoutController(), permanent: true);
-    Get.put(StatisticsLayoutController(), permanent: true);
+    Get.put(LayoutController(), permanent: true);
 
     Get.lazyPut(() => MonthsDataController(dataRepo), fenix: true);
     Get.lazyPut(() => PersonsDataController(dataRepo), fenix: true);

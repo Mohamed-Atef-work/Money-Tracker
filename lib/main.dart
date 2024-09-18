@@ -6,8 +6,8 @@ import 'package:money_tracker/core/utils/services/sqflite/sqflite_services.dart'
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-
-
+  runApp(const MoneyTrackerApp());
+}
 /*  final model = ExpanseModel(
     money: 40,
     month: kJanuary,
@@ -26,6 +26,3 @@ void main() async {
       response.map((e) => ExpanseModel.fromJson(e)).toList();
   print(models.length);
   print(response);*/
-
-  runApp(const MoneyTrackerApp());
-}

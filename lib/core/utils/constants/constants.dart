@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 const kHorizontal10Vertical5 =
     EdgeInsets.symmetric(horizontal: 10, vertical: 5);
+const kPadding5 = EdgeInsets.all(5);
+const kPadding10 = EdgeInsets.all(10);
+const kVerticalPadding10 = EdgeInsets.symmetric(vertical: 10);
+const kHorizontalPadding15 = EdgeInsets.symmetric(horizontal: 15);
 const kHorizontalPadding5 = EdgeInsets.symmetric(horizontal: 5);
 const kHorizontalPadding8 = EdgeInsets.symmetric(horizontal: 8);
 const kHorizontalPadding10 = EdgeInsets.symmetric(horizontal: 10);
