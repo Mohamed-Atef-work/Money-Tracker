@@ -39,6 +39,7 @@ class CircularGraphWidget extends StatelessWidget {
   List<PieChartSectionData>? _sections() => List.generate(
         totals.length,
         (index) => PieChartSectionData(
+          color: kGraphColors[index],
           radius: 70,
           showTitle: true,
           value: totals[index].total.toDouble(),

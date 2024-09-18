@@ -37,7 +37,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: kWhite,
+      cursorColor: Colors.white,
       maxLines: maxLines,
       onChanged: onChanged,
       validator: validator,
@@ -49,7 +49,7 @@ class CustomTextFormField extends StatelessWidget {
 
   _border() => OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
-        borderSide: const BorderSide(color: kWhite),
+        borderSide: const BorderSide(color: Colors.white),
       );
 
   _inputDecoration() => InputDecoration(

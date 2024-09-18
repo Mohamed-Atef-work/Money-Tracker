@@ -27,7 +27,7 @@ class StatisticsLineGraphWidget extends StatelessWidget {
           lineBarsData: [
             LineChartBarData(
               barWidth: 2,
-              //colors: [kDarkBrown],
+              colors: kGraphColors,
               spots: _spots(),
             ),
           ],

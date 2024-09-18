@@ -50,37 +50,41 @@ class PersonsSidesController extends GetxController {
 
   void addPerson() async {
     if (formKey.currentState!.validate()) {
-      addPersonOrSideState = RequestState.loading;
-      update();
-
-      final model = PersonModel(person: sideOrPersonCon.text);
       try {
+        addPersonOrSideState = RequestState.loading;
+        update();
+
+        final model = PersonModel(person: sideOrPersonCon.text);
         await _repo.addPerson(model);
+
         persons.add(sideOrPersonCon.text);
         sideOrPersonCon.text = '';
         addPersonOrSideState = RequestState.success;
-        delayedUpdate();
+        await delayedUpdate();
       } on LocalDataBaseException catch (exc) {
         addPersonOrSideState = RequestState.error;
-        update();
+        await delayedUpdate();
       }
     }
   }
 
   void addSpendingSide() async {
     if (formKey.currentState!.validate()) {
-      addPersonOrSideState = RequestState.loading;
-      update();
-      final model = SpendingSideModel(spendingSide: sideOrPersonCon.text);
       try {
+        addPersonOrSideState = RequestState.loading;
+        update();
+
+        final model = SpendingSideModel(spendingSide: sideOrPersonCon.text);
         await _repo.addSpendingSide(model);
+
         sides.add(sideOrPersonCon.text);
         sideOrPersonCon.text = '';
+
         addPersonOrSideState = RequestState.success;
-        delayedUpdate();
+        await delayedUpdate();
       } on LocalDataBaseException catch (exc) {
         addPersonOrSideState = RequestState.error;
-        update();
+        await delayedUpdate();
       }
     }
   }

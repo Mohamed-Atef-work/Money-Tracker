@@ -32,6 +32,6 @@ class BaseModelSheetComponent extends StatelessWidget {
           topRight: Radius.circular(25),
           topLeft: Radius.circular(25),
         ),
-        border: Border.all(color: kWhite, style: BorderStyle.solid),
+        border: Border.all(color: Colors.white, style: BorderStyle.solid),
       );
 }
