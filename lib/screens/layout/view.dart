@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'views/month_view.dart';
+import 'widgets/floating_button.dart';
 import 'package:flutter/material.dart';
 import 'views/spending_side_view.dart';
 import 'package:money_tracker/core/components/app_bar.dart';
@@ -20,6 +21,7 @@ class LayoutScreen extends StatelessWidget {
           index: controller.index,
           onTap: (index) => controller.changeIndex(index),
         ),
+        floatingActionButton: const AddExpanseFloatingButtonWidget(),
       ),
     );
   }
