@@ -3,8 +3,8 @@ import 'package:money_tracker/core/config/local/english.dart';
 class Arabic {
   static String code = "ar";
 
-  static String inProposition = "في";
   static String of = "ل";
+  static String inProposition = "في";
 
   static String search = "ابحث";
   static String data = "بيانات";
@@ -41,9 +41,9 @@ class Arabic {
   static String february = "فبراير";
   static String september = "سبتمبر";
 
-  static String eachSpendingSideTotal = "مجموع كل وجه إنفاق ";
 
   static String eachPersonTotal = "مجموع كل شخص ";
+  static String eachSpendingSideTotal = "مجموع كل وجه إنفاق ";
 
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";

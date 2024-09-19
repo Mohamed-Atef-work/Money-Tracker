@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 class English {
   static String code = "en";
 
-  static String inProposition = "In";
   static String of = "Of";
+  static String inProposition = "In";
 
   static String may = "May";
   static String june = "June";
@@ -39,9 +39,8 @@ class English {
   static String spendingSides = "Spending Sides";
   static String thereIsNoData = "There Is No Data";
   static String addSpendingSide = "Add Spending Side";
-
-  static String eachSpendingSideTotal = "Each Spending Side Total ";
   static String eachPersonTotal = "Each Person Total ";
+  static String eachSpendingSideTotal = "Each Spending Side Total ";
 
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";
@@ -113,13 +112,13 @@ class English {
       };
 
   static String eachSpendingSideTotalOfThisMonth(String month) =>
-      "${eachSpendingSideTotal.tr} ${inProposition.tr} ($month)";
+      "${eachSpendingSideTotal.tr} ${inProposition.tr} ($month).";
   static String eachSpendingSideTotalOfThisPersonInThisMonth(
           String person, String month) =>
-      "${eachSpendingSideTotal.tr} ${of.tr} ($person) ${inProposition.tr} ($month)";
+      "${eachSpendingSideTotal.tr} ${of.tr} ($person) ${inProposition.tr} ($month).";
   static String eachPersonTotalOfThisSpendingSideInThisMonth(
           String side, String month) =>
-      "${eachPersonTotal.tr} ${of.tr} ($side) ${inProposition.tr} ($month)";
+      "${eachPersonTotal.tr} ${of.tr} ($side) ${inProposition.tr} ($month).";
   static eachPersonTotalOfThisMonth(String month) =>
-      "${eachPersonTotal.tr} ${inProposition.tr} ($month)";
+      "${eachPersonTotal.tr} ${inProposition.tr} ($month).";
 }
