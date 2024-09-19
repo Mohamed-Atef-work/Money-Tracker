@@ -1,5 +1,10 @@
+import 'package:get/get.dart';
+
 class English {
   static String code = "en";
+
+  static String inProposition = "In";
+  static String of = "Of";
 
   static String may = "May";
   static String june = "June";
@@ -15,9 +20,9 @@ class English {
   static String september = "September";
 
   static String add = "Add";
+  static String data = "Data";
   static String total = "Total";
   static String month = "Month";
-  static String data = "Data";
   static String money = "Money";
   static String search = "search";
   static String months = "Months";
@@ -30,18 +35,13 @@ class English {
   static String appName = "Money Tracker";
   static String addExpanse = "Add Expanse";
   static String description = "Description";
-  static String spendingSides = "Spending Sides";
   static String spendingSide = "Spending Side";
+  static String spendingSides = "Spending Sides";
   static String thereIsNoData = "There Is No Data";
   static String addSpendingSide = "Add Spending Side";
 
-  static String eachSpendingSideTotalOfThisMonth =
-      "Each Spending Side Total Of This Month";
-  static String eachSpendingSideTotalOfThisPersonInThisMonth =
-      "Each Spending Side Total Of This Person In This Month";
-  static String eachPersonTotalOfThisSpendingSideInThisMonth =
-      "Each Person Total Of This Spending Side In This Month";
-  static String eachPersonTotalOfThisMonth = "Each Person Total Of This Month";
+  static String eachSpendingSideTotal = "Each Spending Side Total ";
+  static String eachPersonTotal = "Each Person Total ";
 
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";
@@ -67,6 +67,8 @@ class English {
   ];
 
   static Map<String, String> toMap() => {
+        inProposition: inProposition,
+        of: of,
         may: may,
         june: june,
         july: july,
@@ -79,10 +81,10 @@ class English {
         december: december,
         february: february,
         september: september,
-        total: total,
-        month: month,
         add: add,
         data: data,
+        total: total,
+        month: month,
         money: money,
         search: search,
         person: person,
@@ -95,22 +97,29 @@ class English {
         addExpanse: addExpanse,
         statistics: statistics,
         description: description,
+        spendingSide: spendingSide,
         thereIsNoData: thereIsNoData,
         spendingSides: spendingSides,
-        spendingSide: spendingSide,
+        eachPersonTotal: eachPersonTotal,
         addSpendingSide: addSpendingSide,
         databaseIsClosed: databaseIsClosed,
         tableDoesNotExist: tableDoesNotExist,
         unknownDatabaseError: unknownDatabaseError,
+        eachSpendingSideTotal: eachSpendingSideTotal,
         syntaxErrorInSQLQuery: syntaxErrorInSQLQuery,
         failedToOpenTheDatabase: failedToOpenTheDatabase,
         databaseIsInReadOnlyMode: databaseIsInReadOnlyMode,
         uniqueConstraintViolation: uniqueConstraintViolation,
-        eachPersonTotalOfThisSpendingSideInThisMonth:
-            eachPersonTotalOfThisSpendingSideInThisMonth,
-        eachPersonTotalOfThisMonth: eachPersonTotalOfThisMonth,
-        eachSpendingSideTotalOfThisPersonInThisMonth:
-            eachSpendingSideTotalOfThisPersonInThisMonth,
-        eachSpendingSideTotalOfThisMonth: eachSpendingSideTotalOfThisMonth,
       };
+
+  static String eachSpendingSideTotalOfThisMonth(String month) =>
+      "${eachSpendingSideTotal.tr} ${inProposition.tr} ($month)";
+  static String eachSpendingSideTotalOfThisPersonInThisMonth(
+          String person, String month) =>
+      "${eachSpendingSideTotal.tr} ${of.tr} ($person) ${inProposition.tr} ($month)";
+  static String eachPersonTotalOfThisSpendingSideInThisMonth(
+          String side, String month) =>
+      "${eachPersonTotal.tr} ${of.tr} ($side) ${inProposition.tr} ($month)";
+  static eachPersonTotalOfThisMonth(String month) =>
+      "${eachPersonTotal.tr} ${inProposition.tr} ($month)";
 }

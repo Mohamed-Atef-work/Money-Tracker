@@ -14,36 +14,41 @@ class PersonsStatisticsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final personsSides = Get.find<PersonsSidesController>();
-    return GetBuilder<PersonsStatisticsController>(builder: (controller) {
-      if (controller.dataState == RequestState.loading) {
-        return const LoadingWidget();
-      } else {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            StatisticsLineGraphWidget(
-              totals: controller.personTotalEachMonth,
-              leftTitle: personsSides.persons[personsSides.selectedPerson],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CircularGraphWidget(
-                  monthPersonSide: MonthPersonSide.side,
-                  totals: controller.eachSideOfPersonOfTheMonth,
-                  title:
-                      English.eachSpendingSideTotalOfThisPersonInThisMonth.tr,
-                ),
-                CircularGraphWidget(
-                  monthPersonSide: MonthPersonSide.person,
-                  title: English.eachPersonTotalOfThisMonth.tr,
-                  totals: controller.eachPersonTotalOfTheMonth,
-                ),
-              ],
-            ),
-          ],
-        );
-      }
-    });
+    return GetBuilder<PersonsStatisticsController>(
+      builder: (controller) {
+        final month = English.monthsList[personsSides.selectedMonth];
+        final person = personsSides.persons[personsSides.selectedPerson];
+
+        if (controller.dataState == RequestState.loading) {
+          return const LoadingWidget();
+        } else {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              StatisticsLineGraphWidget(
+                totals: controller.personTotalEachMonth,
+                leftTitle: personsSides.persons[personsSides.selectedPerson],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CircularGraphWidget(
+                    monthPersonSide: MonthPersonSide.side,
+                    totals: controller.eachSideOfPersonOfTheMonth,
+                    title: English.eachSpendingSideTotalOfThisPersonInThisMonth(
+                        person, month.tr),
+                  ),
+                  CircularGraphWidget(
+                    monthPersonSide: MonthPersonSide.person,
+                    title: English.eachPersonTotalOfThisMonth(month.tr),
+                    totals: controller.eachPersonTotalOfTheMonth,
+                  ),
+                ],
+              ),
+            ],
+          );
+        }
+      },
+    );
   }
 }

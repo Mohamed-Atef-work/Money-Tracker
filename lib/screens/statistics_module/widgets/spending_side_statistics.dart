@@ -16,6 +16,8 @@ class SpendingSidesStatisticsWidget extends StatelessWidget {
     final personSide = Get.find<PersonsSidesController>();
     return GetBuilder<SpendingSidesStatisticsController>(
       builder: (controller) {
+        final month = English.monthsList[personSide.selectedMonth];
+        final side = personSide.sides[personSide.selectedSide];
         if (controller.dataState == RequestState.loading) {
           return const LoadingWidget();
         } else {
@@ -32,13 +34,13 @@ class SpendingSidesStatisticsWidget extends StatelessWidget {
                   CircularGraphWidget(
                     totals: controller.eachSideOfMonth,
                     monthPersonSide: MonthPersonSide.side,
-                    title: English.eachSpendingSideTotalOfThisMonth.tr,
+                    title: English.eachSpendingSideTotalOfThisMonth(month.tr),
                   ),
                   CircularGraphWidget(
                     monthPersonSide: MonthPersonSide.person,
                     totals: controller.eachPersonTotalOfSideInMonth,
-                    title:
-                        English.eachPersonTotalOfThisSpendingSideInThisMonth.tr,
+                    title: English.eachPersonTotalOfThisSpendingSideInThisMonth(
+                        side.tr, month.tr),
                   ),
                 ],
               )

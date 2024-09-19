@@ -2,6 +2,10 @@ import 'package:money_tracker/core/config/local/english.dart';
 
 class Arabic {
   static String code = "ar";
+
+  static String inProposition = "في";
+  static String of = "ل";
+
   static String search = "ابحث";
   static String data = "بيانات";
   static String months = "شهور";
@@ -18,32 +22,28 @@ class Arabic {
   static String spendingSides = "أوجه الانفاق";
   static String thereIsNoData = "لا يوجد بيانات";
 
-  static String total = "المجموع";
-  static String month = "الشهر";
   static String add = "اضافة";
+  static String month = "الشهر";
+  static String total = "المجموع";
   static String addPerson = "اضافة شخص";
   static String addSpendingSide = "اضافة جهة انفاق";
 
   static String may = "مايو";
+  static String mars = "مارس";
   static String june = "يونيو";
   static String july = "يوليو";
-  static String mars = "مارس";
-  static String april = "ابريل";
-  static String august = "اغسطس";
-  static String october = "اكتوبر";
+  static String april = "أبريل";
+  static String august = "أغسطس";
   static String january = "يناير";
+  static String october = "أكتوبر";
   static String november = "نوفمبر";
   static String december = "ديسمبر";
   static String february = "فبراير";
   static String september = "سبتمبر";
 
-  static String eachSpendingSideTotalOfThisMonth =
-      "مجموع كل وجه إنفاق في هذا الشهر";
-  static String eachSpendingSideTotalOfThisPersonInThisMonth =
-      "مجموع كل وجه إنفاق لهذا الشخص في هذا الشهر";
-  static String eachPersonTotalOfThisSpendingSideInThisMonth =
-      "مجموع كل شخص في وجه الإنفاق هذا في هذا الشهر";
-  static String eachPersonTotalOfThisMonth = "مجموع كل شخص في هذا الشهر";
+  static String eachSpendingSideTotal = "مجموع كل وجه إنفاق ";
+
+  static String eachPersonTotal = "مجموع كل شخص ";
 
   static String databaseIsClosed = "Database is closed.";
   static String tableDoesNotExist = "Table does not exist.";
@@ -54,6 +54,8 @@ class Arabic {
   static String databaseIsInReadOnlyMode = "Database is in read-only mode.";
 
   static Map<String, String> toMap() => {
+        English.inProposition: inProposition,
+        English.of: of,
         English.may: may,
         English.june: june,
         English.july: july,
@@ -66,10 +68,10 @@ class Arabic {
         English.december: december,
         English.february: february,
         English.september: september,
-        English.total: total,
-        English.month: month,
         English.add: add,
         English.data: data,
+        English.total: total,
+        English.month: month,
         English.money: money,
         English.search: search,
         English.person: person,
@@ -85,20 +87,15 @@ class Arabic {
         English.spendingSide: spendingSide,
         English.spendingSides: spendingSides,
         English.thereIsNoData: thereIsNoData,
+        English.eachPersonTotal: eachPersonTotal,
         English.addSpendingSide: addSpendingSide,
         English.databaseIsClosed: databaseIsClosed,
         English.tableDoesNotExist: tableDoesNotExist,
         English.unknownDatabaseError: unknownDatabaseError,
+        English.eachSpendingSideTotal: eachSpendingSideTotal,
         English.syntaxErrorInSQLQuery: syntaxErrorInSQLQuery,
         English.failedToOpenTheDatabase: failedToOpenTheDatabase,
         English.databaseIsInReadOnlyMode: databaseIsInReadOnlyMode,
         English.uniqueConstraintViolation: uniqueConstraintViolation,
-        English.eachPersonTotalOfThisMonth: eachPersonTotalOfThisMonth,
-        English.eachPersonTotalOfThisSpendingSideInThisMonth:
-            eachPersonTotalOfThisSpendingSideInThisMonth,
-        English.eachSpendingSideTotalOfThisPersonInThisMonth:
-            eachSpendingSideTotalOfThisPersonInThisMonth,
-        English.eachSpendingSideTotalOfThisMonth:
-            eachSpendingSideTotalOfThisMonth,
       };
 }

@@ -7,6 +7,8 @@ import 'package:money_tracker/core/config/local/translation.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/core/config/routes/routes_strings.dart';
 
+import 'core/config/local/arabic.dart';
+
 class MoneyTrackerApp extends StatelessWidget {
   const MoneyTrackerApp({super.key});
 
@@ -15,7 +17,7 @@ class MoneyTrackerApp extends StatelessWidget {
     return GetMaterialApp(
       getPages: pages(),
       title: English.appName.tr,
-      locale: Locale(English.code),
+      locale: Locale(Arabic.code),
       initialRoute: Routes.layout,
       initialBinding: AppBindings(),
       translations: AppLocalization(),
