@@ -27,6 +27,7 @@ class English {
   static String search = "search";
   static String months = "Months";
   static String person = "Person";
+  static String invalid = "Invalid ";
   static String persons = "Persons";
   static String loading = "Loading";
   static String expanses = "Expanses";
@@ -88,6 +89,7 @@ class English {
         search: search,
         person: person,
         months: months,
+        invalid: invalid,
         loading: loading,
         appName: appName,
         persons: persons,

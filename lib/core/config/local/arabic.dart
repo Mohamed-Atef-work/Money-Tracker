@@ -12,6 +12,7 @@ class Arabic {
   static String money = "المال";
   static String person = "الشخص";
   static String persons = "اشخاص";
+  static String invalid = "غير صالح ";
   static String expanses = "مصروفات";
   static String description = "الوصف";
   static String loading = "جار التحمبل";
@@ -40,7 +41,6 @@ class Arabic {
   static String december = "ديسمبر";
   static String february = "فبراير";
   static String september = "سبتمبر";
-
 
   static String eachPersonTotal = "مجموع كل شخص ";
   static String eachSpendingSideTotal = "مجموع كل وجه إنفاق ";
@@ -76,6 +76,7 @@ class Arabic {
         English.search: search,
         English.person: person,
         English.months: months,
+        English.invalid: invalid,
         English.loading: loading,
         English.appName: appName,
         English.persons: persons,

@@ -13,6 +13,7 @@ const kHorizontalPadding15 = EdgeInsets.symmetric(horizontal: 15);
 const kHorizontalPadding10 = EdgeInsets.symmetric(horizontal: 10);
 
 const kDuration1Second = Duration(seconds: 1);
+const kDurationHalfSecond = Duration(milliseconds: 500);
 
 const kPrimaryColorYellow = Color(0xFFffbd29);
 const kWhiteGray = Color(0xFFffe3ac);
@@ -57,5 +58,7 @@ const List<Color> kGraphColors = [
   kDarkBrown,
   Colors.teal,
   Colors.deepOrange,
+  Colors.deepPurple,
+  Colors.deepPurple,
   Colors.deepPurple,
 ];

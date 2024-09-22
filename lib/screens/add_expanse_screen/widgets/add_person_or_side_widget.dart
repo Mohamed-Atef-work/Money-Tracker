@@ -6,6 +6,7 @@ import 'package:money_tracker/core/components/custom_button.dart';
 import 'package:money_tracker/core/components/loading_widget.dart';
 import 'package:money_tracker/core/components/custom_text_form_field.dart';
 import 'package:money_tracker/core/components/base_model_sheet_component.dart';
+import 'package:money_tracker/core/utils/validators.dart';
 import 'package:money_tracker/screens/data_module/controllers/person_sides_data_controller.dart';
 
 class AddPersonOrSideWidget extends StatelessWidget {
@@ -35,6 +36,7 @@ class AddPersonOrSideWidget extends StatelessWidget {
                     child: CustomTextFormField(
                       fontSize: 15,
                       hintText: title,
+                      validator: (value) => _validator(value, title),
                       textEditingController: controller.sideOrPersonCon,
                     ),
                   ),
@@ -53,4 +55,7 @@ class AddPersonOrSideWidget extends StatelessWidget {
       ),
     );
   }
+
+  _validator(String? value, String message) =>
+      Validators.stringValidator(value, message);
 }

@@ -9,7 +9,7 @@ extension MediaQueryValues on BuildContext {
 
 extension DelayedUpdate on GetxController {
   Future<void> delayedUpdate() async => await Future.delayed(
-        kDuration1Second,
+        kDurationHalfSecond,
         () => update(),
       );
 }

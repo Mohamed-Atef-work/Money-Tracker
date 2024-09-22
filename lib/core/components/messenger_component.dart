@@ -29,10 +29,8 @@ class MessengerComponent extends StatelessWidget {
           SizedBox(height: context.height * 0.01),
           CustomText(
             text: mess,
-            fontSize: 25,
-            //fontFamily: kPacifico,
+            fontSize: 20,
             textAlign: TextAlign.center,
-            fontWeight: FontWeight.bold,
           ),
         ],
       ),

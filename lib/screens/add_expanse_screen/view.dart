@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'widgets/add_expense_menus_widget.dart';
 import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/core/utils/images.dart';
+import 'package:money_tracker/core/utils/validators.dart';
 import 'package:money_tracker/core/components/app_bar.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/custom_button.dart';
@@ -91,15 +92,23 @@ class AddExpanseForm extends StatelessWidget {
           CustomTextFormField(
             hintText: English.money.tr,
             textEditingController: addController.moneyCon,
+            validator: (value) => _moneyValidator(value, English.money),
           ),
           SizedBox(height: padding),
           CustomTextFormField(
             maxLines: null,
             hintText: English.description.tr,
             textEditingController: addController.descriptionCon,
+            validator: (value) => _moneyDescription(value, English.description),
           ),
         ],
       ),
     );
   }
+
+  _moneyValidator(String? value, String money) =>
+      Validators.numericValidator(value, money);
+
+  _moneyDescription(String? value, String description) =>
+      Validators.stringValidator(value, description);
 }
