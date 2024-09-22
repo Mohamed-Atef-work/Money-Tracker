@@ -17,23 +17,21 @@ class MessengerComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-            Images.message,
-            width: imageWidth ?? context.width * 0.4,
-            height: imageHeight ?? context.height * 0.3,
-          ),
-          SizedBox(height: context.height * 0.01),
-          CustomText(
-            text: mess,
-            fontSize: 20,
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          Images.message,
+          width: imageWidth ?? context.width * 0.4,
+          height: imageHeight ?? context.height * 0.3,
+        ),
+        SizedBox(height: context.height * 0.01),
+        CustomText(
+          text: mess,
+          fontSize: 20,
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }

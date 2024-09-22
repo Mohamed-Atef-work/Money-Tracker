@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:money_tracker/core/utils/enums.dart';
+import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/utils/constants/constants.dart';
@@ -11,11 +13,16 @@ class SpendingSidesDataController extends GetxController {
 
   SpendingSidesDataController(this._repo);
 
+  RequestState requestState = RequestState.initial;
+
   final personsSides = Get.find<PersonsSidesController>();
 
   List<ExpanseModel> expanses = [];
 
   void getExpanses() async {
+    requestState = RequestState.loading;
+    update();
+
     try {
       final params = _params();
       final models = await _repo.getExpansesOfMonthAndSomeOther(params);
@@ -23,8 +30,11 @@ class SpendingSidesDataController extends GetxController {
       if (models.isEmpty) {
         expanses.clear();
       }
-      update();
+      requestState = RequestState.success;
+      await delayedUpdate();
     } on LocalDataBaseException catch (exc) {
+      requestState = RequestState.error;
+      await delayedUpdate();
       print("error is ---------------> ${exc.message}");
     }
   }

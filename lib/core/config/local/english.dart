@@ -20,6 +20,7 @@ class English {
   static String september = "September";
 
   static String add = "Add";
+  static String error = "Error...";
   static String data = "Data";
   static String total = "Total";
   static String month = "Month";
@@ -86,6 +87,7 @@ class English {
         total: total,
         month: month,
         money: money,
+        error: error,
         search: search,
         person: person,
         months: months,

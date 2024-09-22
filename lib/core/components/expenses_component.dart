@@ -70,12 +70,10 @@ class ExpansesListViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        itemCount: expanses.length,
-        separatorBuilder: (_, __) => const SizedBox(height: 5),
-        itemBuilder: (_, index) => ExpenseComponent(expanses[index]),
-      ),
+    return ListView.separated(
+      itemCount: expanses.length,
+      separatorBuilder: (_, __) => const SizedBox(height: 5),
+      itemBuilder: (_, index) => ExpenseComponent(expanses[index]),
     );
   }
 }

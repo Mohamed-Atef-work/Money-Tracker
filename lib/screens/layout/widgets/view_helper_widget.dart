@@ -12,8 +12,8 @@ class ViewHelperWidget extends StatelessWidget {
   const ViewHelperWidget({
     super.key,
     required this.data,
-    required this.statistics,
     required this.menu,
+    required this.statistics,
   });
 
   @override
@@ -23,10 +23,7 @@ class ViewHelperWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: kVerticalPadding10,
-            child: menu,
-          ),
+          Padding(padding: kVerticalPadding10, child: menu),
           TabBar(
             indicatorWeight: 3,
             padding: kPadding5,

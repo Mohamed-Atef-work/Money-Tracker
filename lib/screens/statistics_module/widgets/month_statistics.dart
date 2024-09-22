@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/core/config/local/english.dart';
 import 'package:money_tracker/core/components/loading_widget.dart';
-import 'package:money_tracker/screens/data_module/controllers/person_sides_data_controller.dart';
+import 'package:money_tracker/core/components/messenger_component.dart';
 import 'package:money_tracker/screens/statistics_module/widgets/line_graph_widget.dart';
 import 'package:money_tracker/screens/statistics_module/widgets/circular_graph_widget.dart';
+import 'package:money_tracker/screens/data_module/controllers/person_sides_data_controller.dart';
 import 'package:money_tracker/screens/statistics_module/controllers/months_statistics_controller.dart';
 
 class MonthsStatisticsWidget extends StatelessWidget {
@@ -19,6 +20,8 @@ class MonthsStatisticsWidget extends StatelessWidget {
         final month = English.monthsList[personsSides.selectedMonth];
         if (controller.dataState == RequestState.loading) {
           return const LoadingWidget();
+        } else if (controller.dataState == RequestState.error) {
+          return MessengerComponent(English.error.tr);
         } else {
           return Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

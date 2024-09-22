@@ -43,10 +43,9 @@ class MonthsStatisticsController extends GetxController {
   }
 
   void getData() async {
+    dataState = RequestState.loading;
+    update();
     try {
-      dataState = RequestState.loading;
-      update();
-
       await _eachMonthTotal();
       await eachSideTotalOfMonth();
       await _eachPersonTotalOfMonth();

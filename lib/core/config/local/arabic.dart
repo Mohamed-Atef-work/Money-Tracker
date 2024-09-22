@@ -6,6 +6,7 @@ class Arabic {
   static String of = "ل";
   static String inProposition = "في";
 
+  static String error = "حدث خطأ...";
   static String search = "ابحث";
   static String data = "بيانات";
   static String months = "شهور";
