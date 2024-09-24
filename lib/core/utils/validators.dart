@@ -8,7 +8,7 @@ class Validators {
     final regExp = RegExp(pattern);
 
     if (value.isEmpty || !regExp.hasMatch(value)) {
-      return English.invalid.tr + message.tr; // Name is empty or null
+      return "${message.tr} ${English.invalid.tr}"; // Name is empty or null
     }
 
     return null;
@@ -16,7 +16,7 @@ class Validators {
 
   static String? numericValidator(value, String message) {
     if (value.isEmpty || double.tryParse(value) == null) {
-      return English.invalid.tr + message.tr;
+      return "${message.tr} ${English.invalid.tr}";
     }
     return null;
   }

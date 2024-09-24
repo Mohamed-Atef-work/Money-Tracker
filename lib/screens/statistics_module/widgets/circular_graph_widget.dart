@@ -51,8 +51,7 @@ class CircularGraphWidget extends StatelessWidget {
           showTitle: true,
           color: kGraphColors[index],
           value: totals[index].total.toDouble(),
-          title: '''${_title(monthPersonSide, totals[index])}
-             \$${totals[index].total}''',
+          title: _title(monthPersonSide, totals[index]),
           titleStyle: const TextStyle(fontSize: 13, color: Colors.white),
         ),
       );
@@ -60,11 +59,11 @@ class CircularGraphWidget extends StatelessWidget {
   String _title(MonthPersonSide monthPersonSide, TotalModel model) {
     switch (monthPersonSide) {
       case MonthPersonSide.side:
-        return model.spendingSide;
+        return "${model.spendingSide} \$${model.total}";
       case MonthPersonSide.month:
-        return model.month;
+        return "${model.month} \$ {model.total}";
       case MonthPersonSide.person:
-        return model.person;
+        return "${model.person} \$${model.total}";
     }
   }
 

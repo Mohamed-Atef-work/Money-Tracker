@@ -47,4 +47,11 @@ class PersonsDataController extends GetxController {
     );
     return params;
   }
+
+
+  @override
+  void onInit() {
+    super.onInit();
+    getExpanses();
+  }
 }

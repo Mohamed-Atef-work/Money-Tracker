@@ -20,8 +20,8 @@ class SpendingSideMenuWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           DropDownMenuComponent(
-            items: controller.translatedMonths,
             selectedValue: controller.selectedMonth,
+            items: English.monthsList.map((e) => e.tr).toList(),
             onChanged: (int? selected) => controller.selectMonth(selected!),
           ),
           DropDownMenuComponent(

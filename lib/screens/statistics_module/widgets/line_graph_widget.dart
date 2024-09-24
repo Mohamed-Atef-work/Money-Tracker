@@ -34,8 +34,8 @@ class StatisticsLineGraphWidget extends StatelessWidget {
                 lineBarsData: [
                   LineChartBarData(
                     barWidth: 2,
-                    colors: kGraphColors,
                     spots: _spots(),
+                    colors: kGraphColors,
                   ),
                 ],
                 titlesData: FlTitlesData(
@@ -49,8 +49,9 @@ class StatisticsLineGraphWidget extends StatelessWidget {
                 ),
                 axisTitleData: FlAxisTitleData(
                   leftTitle: AxisTitle(
-                      titleText: "${English.total.tr} (${leftTitle.tr})",
-                      showTitle: true),
+                    titleText: "${English.total.tr} (${leftTitle.tr})",
+                    showTitle: true,
+                  ),
                 ),
               ),
             ),

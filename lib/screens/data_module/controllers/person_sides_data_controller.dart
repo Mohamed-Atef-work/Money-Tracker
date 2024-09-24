@@ -4,7 +4,6 @@ import 'package:money_tracker/core/utils/enums.dart';
 import 'package:money_tracker/core/utils/extensions.dart';
 import 'package:money_tracker/core/error/exceptions.dart';
 import 'package:money_tracker/core/config/local/english.dart';
-import 'package:money_tracker/core/utils/constants/constants.dart';
 import 'package:money_tracker/screens/repositories/data_repo/data_repo.dart';
 import 'package:money_tracker/screens/repositories/models/person_model.dart';
 import 'package:money_tracker/screens/repositories/models/spending_side_model.dart';
@@ -35,7 +34,7 @@ class PersonsSidesController extends GetxController {
   void showPersonSheet() {
     Widget sheet = AddPersonOrSideWidget(
       onPressed: addPerson,
-      title: kPerson,
+      title: English.person.tr,
     );
     Get.bottomSheet(sheet);
   }
@@ -43,7 +42,7 @@ class PersonsSidesController extends GetxController {
   void showSpendingSideSheet() {
     Widget sheet = AddPersonOrSideWidget(
       onPressed: addSpendingSide,
-      title: kSpendingSide,
+      title: English.spendingSide.tr,
     );
     Get.bottomSheet(sheet);
   }
@@ -132,20 +131,6 @@ class PersonsSidesController extends GetxController {
     update();
   }
 
-  List<String> translatedMonths = [
-    English.january.tr,
-    English.february.tr,
-    English.mars.tr,
-    English.april.tr,
-    English.may.tr,
-    English.june.tr,
-    English.july.tr,
-    English.august.tr,
-    English.september.tr,
-    English.october.tr,
-    English.november.tr,
-    English.december.tr
-  ];
 
   @override
   void onInit() {

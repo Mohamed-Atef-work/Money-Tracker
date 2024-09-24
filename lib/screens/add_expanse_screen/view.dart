@@ -24,7 +24,7 @@ class AddExpanseScreen extends StatelessWidget {
     final padding = height * 0.01;
     final personsSidesController = Get.find<PersonsSidesController>();
     return Scaffold(
-      appBar: CustomAppBar(title: English.addExpanse),
+      appBar: CustomAppBar(title: English.addExpanse.tr),
       body: ListView(
         padding: const EdgeInsets.all(10),
         physics: const BouncingScrollPhysics(),

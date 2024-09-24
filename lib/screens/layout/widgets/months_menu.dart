@@ -21,8 +21,8 @@ class MonthMenuWidget extends StatelessWidget {
       children: [
         GetBuilder<PersonsSidesController>(
           builder: (controller) => DropDownMenuComponent(
-            items: controller.translatedMonths,
             selectedValue: controller.selectedMonth,
+            items: English.monthsList.map((e) => e.tr).toList(),
             onChanged: (int? selected) => controller.selectMonth(selected!),
           ),
         ),
@@ -31,6 +31,7 @@ class MonthMenuWidget extends StatelessWidget {
           onPressed: () {
             final month =
                 English.monthsList[personSideController.selectedMonth];
+
             data.getExpanses(month);
             statistics.getData();
           },
